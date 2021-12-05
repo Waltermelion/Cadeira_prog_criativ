@@ -5,12 +5,14 @@ class Main_Menu {
     l1 = new Levels();
   }
 
-  void desenha() {
+  void desenha() {    
     if (keyPressed) {
-      if ((key == 's' || key == 'S') && gs == false) {
-        mm.desenha();
+      if ((key == 's' || key == 'S') && gs == false) {        
         gs = true;
       }
+    }
+    if (gs){
+    l1.desenha();
     }
   }
 }
