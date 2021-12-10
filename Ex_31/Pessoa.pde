@@ -3,7 +3,7 @@ float posX, posY, pWidth, pHeight, btam;
 color cor;
 float mediaWidth, dpWidth,mediaHeight, dpHeight;
 
-  Pessoa(int x) {
+  Pessoa(float x) {
     mediaWidth = 50;    
     dpWidth = 20;
     mediaHeight = 100;    

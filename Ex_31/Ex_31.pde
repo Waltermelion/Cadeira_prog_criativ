@@ -1,13 +1,13 @@
 Pessoa[] pessoas;
-float posX;
+float posX = 50;
 
 void setup() {
   size(800,800);
   rectMode(CENTER);
-  pessoas = new Pessoa[9];
+  pessoas = new Pessoa[8];
   for(int i=0; i < pessoas.length; i++){
     pessoas[i] = new Pessoa(posX);
-    posX = posX + 50;
+    posX = posX + 100;
   }
 }
 
