@@ -1,5 +1,5 @@
 class Star {
-  float posX, posY, ang, step;
+  float posX, posY, ang, step, cx, cy;
   int n;
   int gen;
 
@@ -7,17 +7,17 @@ class Star {
     ang = 0.0;
     n = 9;    
     gen = 5;
-
+    cx = width/2;
+    cy = height/2;
     step = TWO_PI/float(n);
     println(TWO_PI);
   }
 
   void desenha(float x, float y) {
-    float cx = x;
-    float cy = y;
+    x = cx;
+    y = cy;
     float r = 300;
-    x = posX;
-    y = posY;
+
 
     fill(0);
     beginShape();    
