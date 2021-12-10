@@ -18,6 +18,6 @@ class Bola{
   
   fill(0);
   ellipse(posX,posY,tam,tam);
-  
+  ang += 0.05;
   }
 }
