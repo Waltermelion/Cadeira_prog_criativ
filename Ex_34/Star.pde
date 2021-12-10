@@ -2,9 +2,10 @@ class Star {
   float posX, posY, ang;
   int n;
 
-  Star() {
-    ang = 0.0;
-    n = 5;
+  Star(float a) {
+    ang = a;
+    n = 5;    
+    
   }
 
   void desenha() {
@@ -12,15 +13,15 @@ class Star {
     float cy = height/2;
     float r = 300;
 
-    posX = cx + r * cos(ang);
-    posY = cy + r * sin(ang);
+
     fill(0);
-    beginShape();
+    beginShape();    
     for (int i=0; i < n; i++) {
+      posX = cx + r * cos(ang);
+      posY = cy + r * sin(ang);
       vertex(posX, posY);
-      ang += 0.05;
-      println(i);
-    }
-    endShape();
+      ang += 1.3;
+    }    
+    endShape(CLOSE);
   }
 }
