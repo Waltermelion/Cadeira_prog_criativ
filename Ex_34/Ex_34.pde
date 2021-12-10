@@ -1,13 +1,12 @@
 Star s;
-float ang = 0.0;
+
 
 void setup() {
   size(800,800);
-  s = new Star(ang);
-  
-}
-
-void draw() {
+  s = new Star();
   background(255);
   s.desenha();
+}
+
+void draw() {    
 }

@@ -1,11 +1,12 @@
 class Star {
-  float posX, posY, ang;
+  float posX, posY, ang, step;
   int n;
 
-  Star(float a) {
-    ang = a;
-    n = 5;    
-    
+  Star() {
+    ang = 0.0;
+    n = 9;    
+    step = TWO_PI/float(n);
+    println(TWO_PI);
   }
 
   void desenha() {
@@ -20,7 +21,13 @@ class Star {
       posX = cx + r * cos(ang);
       posY = cy + r * sin(ang);
       vertex(posX, posY);
-      ang += 1.3;
+      ang += step;
+      r = 150;
+      posX = cx + r * cos(ang);
+      posY = cy + r * sin(ang);
+      vertex(posX, posY);
+      ang += step;
+      r = 300;
     }    
     endShape(CLOSE);
   }
