@@ -12,7 +12,7 @@ class Bola{
   void desenha(){
   float cx = width/2;
   float cy = height/2;
-  float r = 300;
+  float r = mouseX;
   
   posX = cx + r * cos(ang);
   posY = cy + r * sin(ang);
