@@ -1,8 +1,8 @@
 import processing.sound.*;
 SoundFile s;
-Sound v;
+Sound v;//mamamabmagaita
 
-Main_Menu mm;
+Main_Menu mm;//naunt
 boolean gs = false;
 
 void setup() {
