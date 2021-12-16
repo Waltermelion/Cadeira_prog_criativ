@@ -8,7 +8,7 @@ class Levels {
   }
 
   void desenha() {
-    background(50,50,150);
+    background(50,50,150);//sint
     n1.desenha();
     n2.desenha();
     n3.desenha();
