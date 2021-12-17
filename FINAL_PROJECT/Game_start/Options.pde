@@ -1,6 +1,6 @@
 class Options {
 
-  Resolucao r;
+  CurisOpt cap;
   GafisOpt gap;
   RakisOpt rap;
   float x3, y3, c3, l3;
@@ -10,7 +10,7 @@ class Options {
 
   Options() {
 
-    r = new Resolucao();
+    cap = new CurisOpt();
     gap = new GafisOpt();
     rap = new RakisOpt();
     x3 = width-200;
@@ -61,7 +61,7 @@ class Options {
     else fill(255);
     text("Rakis", width/2 + 200, height/2);
 
-    if (mm.b3) r.desenha();
+    if (mm.b3) cap.desenha();
     if (mm.b6) gap.desenha();
     if (mm.b7) rap.desenha();
   }

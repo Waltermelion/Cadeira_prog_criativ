@@ -1,4 +1,4 @@
-class Resolucao {
+class CurisOpt {
 
   Tamanho tm;
   Cores cor;
@@ -6,7 +6,7 @@ class Resolucao {
   float x5, y5, c5, l5;
   float x6, y6, c6, l6;
 
-  Resolucao() {
+  CurisOpt() {
     
     tm = new Tamanho();
     cor = new Cores();
