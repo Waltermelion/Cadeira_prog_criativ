@@ -5,6 +5,7 @@ class Main_Menu {
 
   float x, y, t, t1;
   float x1, y1, t2, t3;
+  float x2, y2, t4, t5;
   int value;
   boolean b1, b2;
 
@@ -24,6 +25,10 @@ class Main_Menu {
     t3 = 110;
     b1 = false;
     b2 = false;
+    x2 = width/2 -100;
+    y2 = height/2 + 120;
+    t4 = 200;
+    t5 = 100;
   }
 
   void desenha() {    
@@ -39,6 +44,11 @@ class Main_Menu {
     if (mouseX > x1 && mouseX < x1+t2 && mouseY > y1 && mouseY < y1+t3) fill(200, 0, 0);
     else fill(255);
     text("Options", width/2, height/2+100);
+    fill(0);
+    rect(x2,y2,t4,t5);
+    if (mouseX > x2 && mouseX < x2+t4 && mouseY > y2 && mouseY < y2+t5) fill(200, 0, 0);
+    else fill(255);
+    text("Exit", width/2, height/2 + 200);
 
     if (b1) gm.desenha();
     if (b2) op.desenha();

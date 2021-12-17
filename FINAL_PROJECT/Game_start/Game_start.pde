@@ -21,6 +21,8 @@ void mousePressed() {
   if (mouseX > mm.x1 && mouseX < mm.x1+mm.t2 && mouseY > mm.y1 && mouseY < mm.y1+mm.t3)
     mm.b2 = true;
    
+   if (mouseX > mm.x2 && mouseX < mm.x2+mm.t4 && mouseY > mm.y2 && mouseY < mm.y2+mm.t5)
+   exit();
 }
 
 void mouseReleased() {
