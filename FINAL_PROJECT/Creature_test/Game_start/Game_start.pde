@@ -1,13 +1,18 @@
 Curis c;
+Gafis g;
 
 void setup() {
-  fullScreen();
+  colorMode(HSB,100);
+  //fullScreen();
+  size(800,800);
   textSize(100);
-  textAlign(CENTER);
-  background(120,50,35);
+  textAlign(CENTER);  
   c = new Curis();
+  g = new Gafis();
 }
 
 void draw() {
+  background(10,50,100); 
   c.spawnC();
+  g.spawnG();  
 }
