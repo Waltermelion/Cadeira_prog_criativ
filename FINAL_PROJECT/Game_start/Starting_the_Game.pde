@@ -5,7 +5,7 @@ class GameStart {
 
   GameStart() {
 
-    cr = new Curis(10,20,10);
+    cr = new Curis();
     x = width/2;
     y = height/2;
   }
