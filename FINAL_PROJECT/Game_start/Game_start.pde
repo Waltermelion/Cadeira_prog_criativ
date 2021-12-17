@@ -1,7 +1,3 @@
-import processing.sound.*;
-SoundFile s;
-Sound v;//mamamabmagaita
-
 Main_Menu mm;//naunt
 boolean gs = false;
 
@@ -11,13 +7,15 @@ void setup() {
   textAlign(CENTER);
   background(0);
   mm = new Main_Menu();
-  s = new SoundFile(this,"stuck.mp3");
-  s.play();
-  v = new Sound(this);
 }
 
 void draw() {
-  float amplitude = map(mouseY, 0, height, 0.4, 0.0);
-  v.volume(amplitude);
   mm.desenha();
+}
+
+void mouseReleased() {
+  if (mouseX > mm.x && mouseX < mm.x+mm.t && mouseY > mm.y && mouseY < mm.y+mm.t1)
+    mm.GameStart();
+  if (mouseX > mm.x1 && mouseX < mm.x1+mm.t2 && mouseY > mm.y1 && mouseY < mm.y1+mm.t3)
+    mm.Options();
 }
