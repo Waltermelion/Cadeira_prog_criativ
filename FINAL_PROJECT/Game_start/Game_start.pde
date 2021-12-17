@@ -23,10 +23,15 @@ void mousePressed() {
 
   if (mouseX > mm.x2 && mouseX < mm.x2+mm.c2 && mouseY > mm.y2 && mouseY < mm.y2+mm.l2)
     exit();
+
   if (mouseX > mm.op.x3 && mouseX < mm.op.x3+mm.op.c3 && mouseY > mm.op.y3 && mouseY < mm.op.y3+mm.op.l3)
-    mm.b1 = false; 
-    mm.b2 = false;
-    background(0);
+    mm.b1 = false;
+  mm.b2 = false;
+  background(0);
+
+  if (mouseX > mm.op.x4 && mouseX < mm.op.x4+mm.op.c4 && mouseY > mm.op.y4 && mouseY < mm.op.y4+mm.op.l4)
+    mm.b2 = true;
+  
 }
 
 void mouseReleased() {
@@ -35,4 +40,7 @@ void mouseReleased() {
 
   if (mouseX > mm.x1 && mouseX < mm.x1+mm.c1 && mouseY > mm.y1 && mouseY < mm.y1+mm.l1)
     mm.b2 = true;
+
+  if (mouseX > mm.op.x4 && mouseX < mm.op.x4+mm.op.c4 && mouseY > mm.op.y4 && mouseY < mm.op.y4+mm.op.l4)
+    mm.op.b3 = true;
 }
