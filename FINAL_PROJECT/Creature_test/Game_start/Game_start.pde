@@ -4,7 +4,7 @@ void setup() {
   fullScreen();
   textSize(100);
   textAlign(CENTER);
-  background(0);
+  background(120,50,35);
   c = new Curis();
 }
 
