@@ -1,5 +1,5 @@
 Curis c;
-Gafis g;
+//Gafis g;
 
 void setup() {
   colorMode(HSB,100);
@@ -8,11 +8,11 @@ void setup() {
   textSize(100);
   textAlign(CENTER);  
   c = new Curis();
-  g = new Gafis();
+  //g = new Gafis();
 }
 
 void draw() {
   background(10,50,100); 
   c.spawnC();
-  g.spawnG();  
+  //g.spawnG();  
 }

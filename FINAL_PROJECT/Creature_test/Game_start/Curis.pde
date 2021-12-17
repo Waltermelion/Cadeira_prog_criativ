@@ -4,6 +4,7 @@ class Curis {
   float fome;
   float t = 2;
   float vel = 10;
+  Boolean alive;
 
   Curis() {
     posX = random(width);
@@ -11,12 +12,13 @@ class Curis {
     tam = 50;
     vida = 1;
     fome = 50;
+    alive = true;
   }
 
   void spawnC() {      
-    float num = noise(t);
-    num = map(num, 0, 1, 0, width);    
-    posY = num;
+    //float num = noise(t);
+    //num = map(num, 0, 1, 0, width);    
+    //posY = num;
     if (posX < tam/2) {
       posX = tam/2;
     }  
@@ -29,17 +31,22 @@ class Curis {
     if (posY < tam/2) {
       posY = tam/2;
     }
-    while (vida < 20) {
-      vida += 0.01;
+    if (vida >= 20){
+      vida = 20;
     }
-    do {
+    if (fome <= 0){
+      alive = false;
+    }
+    while (alive) {
       fill(0);
       ellipse(posX, posY, tam, tam);      
-      fome -= 0.01;
-      t += random(-0.02, 0.02);
-      c.posX += random(-vel, vel);
+      fome -= 0.0001;
+      vida += 0.0001;
+      //t += random(-0.02, 0.02);
+      posY += random(-vel, vel);
+      posX += random(-vel, vel);
       println(vida);
       println(fome);
-    } while (vida > 0 && fome > 0);
+    }
   }
 }
