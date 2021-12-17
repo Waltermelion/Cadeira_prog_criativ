@@ -1,12 +1,12 @@
 class GameStart {
 
-  float x, y, t;
+  float x, y;
 
   GameStart() {
 
     x = width/2;
     y = height/2;
-    t = 100;
+    
   }
 
 

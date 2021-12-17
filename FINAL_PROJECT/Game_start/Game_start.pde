@@ -13,9 +13,21 @@ void draw() {
   mm.desenha();
 }
 
+
+void mousePressed() {
+  if (mouseX > mm.x && mouseX < mm.x+mm.t && mouseY > mm.y && mouseY < mm.y+mm.t1)
+    mm.b1 = true;
+    
+  if (mouseX > mm.x1 && mouseX < mm.x1+mm.t2 && mouseY > mm.y1 && mouseY < mm.y1+mm.t3)
+    mm.b2 = true;
+   
+}
+
 void mouseReleased() {
   if (mouseX > mm.x && mouseX < mm.x+mm.t && mouseY > mm.y && mouseY < mm.y+mm.t1)
-    mm.GameStart();
+    mm.b1 = true;
+  
   if (mouseX > mm.x1 && mouseX < mm.x1+mm.t2 && mouseY > mm.y1 && mouseY < mm.y1+mm.t3)
-    mm.Options();
+    mm.b2 = true;
+ 
 }
