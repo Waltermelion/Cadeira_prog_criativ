@@ -12,20 +12,19 @@ void setup() {
   c = new Curis();
   g = new Gafis();
   r = new Rakis();
-  relvas.add(new Relva());
+  relvas.add(new Relva(width/2,height/2));
 }
 
 void draw() {
   background(10, 50, 100);
+  for(int i=0;i<relvas.size();i++){
+  relvas.get(i).spawnRelvaOnClick();  
+  }
   g.spawnG();
   r.spawnR();
   c.spawnC();  
-  Relva relv = relvas.get(0);
-  relv.spawnRandomRelva();
 }
 
 void mouseReleased(){  
-  relvas.add(new Relva());
-  Relva relv1 = relvas.get(1);
-  relv1.spawnRelvaOnClick();
+  relvas.add(new Relva(mouseX,mouseY));
 }

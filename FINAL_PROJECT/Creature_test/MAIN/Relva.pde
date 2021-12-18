@@ -2,10 +2,11 @@ class Relva {
   float posX, posY, tam;
 
 
-  Relva() {
-    posX = random(width);
-    posY = random(height);
+  Relva(float x, float y) {
+    posX = x;
+    posY = y;
     tam = 50;
+    rectMode(CENTER);
   }
 
   void spawnRandomRelva() {
@@ -13,9 +14,7 @@ class Relva {
     fill(30, 100, 100);
     rect(posX, posY, tam, tam);
   }
-  void spawnRelvaOnClick() {
-    posX = mouseX;
-    posY = mouseY;
+  void spawnRelvaOnClick() {   
     noStroke();
     fill(30, 100, 100);
     rect(posX, posY, tam, tam);
