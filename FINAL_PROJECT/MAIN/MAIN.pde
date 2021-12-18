@@ -48,19 +48,19 @@ void mousePressed() {
     mm.b2 = true;//Sai do Options e volta para o Main Menu
 
   if (mouseX > mm.op.cap.tm.x9 && mouseX < mm.op.cap.tm.x9+mm.op.cap.tm.c9 && mouseY > mm.op.cap.tm.y9 && mouseY < mm.op.cap.tm.y9+mm.op.cap.tm.l9)
-    mm.gm.cr.tam = 5;
+    mm.gm.cr.tam = 5;//Butão dentro das "Options" para o utilizador alterar o tamanho dos Curis
 
   if (mouseX > mm.op.cap.tm.x10 && mouseX < mm.op.cap.tm.x10+mm.op.cap.tm.c10 && mouseY > mm.op.cap.tm.y10 && mouseY < mm.op.cap.tm.y10+mm.op.cap.tm.l10)
-    mm.gm.cr.tam = 10;
+    mm.gm.cr.tam = 10;//Butão dentro das "Options" para o utilizador alterar o tamanho dos Curis
 
   if (mouseX > mm.op.cap.tm.x11 && mouseX < mm.op.cap.tm.x11+mm.op.cap.tm.c11 && mouseY > mm.op.cap.tm.y11 && mouseY < mm.op.cap.tm.y11+mm.op.cap.tm.l11)
-    mm.gm.cr.tam = 15;
+    mm.gm.cr.tam = 15;//Butão dentro das "Options" para o utilizador alterar o tamanho dos Curis
 
   if (mouseX > mm.op.cap.cor.x12 && mouseX < mm.op.cap.cor.x12+mm.op.cap.cor.c12 && mouseY > mm.op.cap.cor.y12 && mouseY < mm.op.cap.cor.y12+mm.op.cap.cor.l12)
-    mm.gm.cr.c = color(0,0,255);
+    mm.gm.cr.c = color(0,0,255);//Butão dentro das "Options" para o utilizador alterar a cor dos Curis
 }
 
-
+//SERRA EXPLICA ISTO NUM COMMENT QUE EU NÃO PERCEBO
 void mouseReleased() {
   if (mouseX > mm.x && mouseX < mm.x+mm.c && mouseY > mm.y && mouseY < mm.y+mm.l)
     mm.b1 = true;
