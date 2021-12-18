@@ -32,15 +32,15 @@ class Curis {
       posY = tam/2;
     }        
     while (alive) {
-      fill(0);
-      ellipse(posX, posY, tam, tam);      
-      //fome -= 0.0001;
-      //vida += 0.0001;
-      //t += random(-0.02, 0.02);
       posY += random(-vel, vel);
       posX += random(-vel, vel);
-      //println(c.vida);
-      //println(c.fome);
+      fill(0);
+      ellipse(posX, posY, tam, tam);      
+      fome -= 0.0001;
+      vida += 0.0001;
+      //t += random(-0.02, 0.02);      
+      println(c.vida);
+      println(c.fome);
       if (fome <= 0){
       alive = false;
     }
