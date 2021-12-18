@@ -1,11 +1,11 @@
-class Curis {
+class Curis {//Classe do ser "Curis"
   float posX, posY, tam;
-  float vida;
-  float fome;
+  float vida;//Determina quanta vida o Curis tem, se chegar a 0 o ser morre
+  float fome;//Determina quanta fome o Curis tem, se chegar ao 0 começa a perder vida
   float t = 2;
-  float vel = 10;
+  float vel = 10;//Velocidade do ser
   color c;
-  Boolean alive;
+  Boolean alive;//Determina se está vivo ou não, false = ele morre
 
   Curis() {
     posX = random(width);
