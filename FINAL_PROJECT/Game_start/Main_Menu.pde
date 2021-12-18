@@ -1,7 +1,7 @@
 class Main_Menu {
 
   String current_screen;
-  int[] button_game_start, button_exit, button_options, button_back_1, button_back_2;
+  int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4;
   int[] button_curis, button_rakis, button_gafis;
   int[] button_quantidade, button_more, button_less, numero;
 
@@ -18,6 +18,8 @@ class Main_Menu {
 
     button_back_1 = new int[4];
     button_back_2 = new int[4];
+    button_back_3 = new int[4];
+    button_back_4 = new int[4];
 
     button_curis = new int[4];
     button_rakis = new int[4];
@@ -40,8 +42,12 @@ class Main_Menu {
       display_main_menu();
     } else if (current_screen .equals("OPTIONS_MENU")) {
       display_options_menu();
-    } else if (current_screen .equals("OPTIONS_CONF")) {
-      display_options_conf();
+    } else if (current_screen .equals("OPTIONS_CONF_CURIS")) {
+      display_options_conf_curis();
+    } else if (current_screen .equals("OPTIONS_CONF_RAKIS")) {
+      display_options_conf_rakis();
+    } else if (current_screen .equals("OPTIONS_CONF_GAFIS")) {
+      display_options_conf_gafis();
     }
   }
 
@@ -94,20 +100,30 @@ class Main_Menu {
     button_quantidade[2] = 1070;      //t1
     button_quantidade[3] = 450;      //t2
 
-    button_more[0] = 750;
-    button_more[1] = 550;
-    button_more[2] = 810;
-    button_more[3] = 580;
-
-    button_less[0] = 1125;
+    button_less[0] = 750;
     button_less[1] = 550;
-    button_less[2] = 1180;
+    button_less[2] = 810;
     button_less[3] = 580;
+
+    button_more[0] = 1125;
+    button_more[1] = 550;
+    button_more[2] = 1180;
+    button_more[3] = 580;
 
     numero[0] = 930;
     numero[1] = 550;
     numero[2] = 1000;
     numero[3] = 580;
+    
+    button_back_3[0] = 50;      //x1
+    button_back_3[1] = 40;      //y1
+    button_back_3[2] = 200;     //t1
+    button_back_3[3] = 90;
+    
+    button_back_4[0] = 50;      //x1
+    button_back_4[1] = 40;      //y1
+    button_back_4[2] = 200;     //t1
+    button_back_4[3] = 90;
   }
 
   void desenha_button(String my_text, int x1, int y1, int t1, int t2) {
@@ -140,11 +156,27 @@ class Main_Menu {
     desenha_button("RAKIS", button_rakis[0], button_rakis[1], button_rakis[2], button_rakis[3]);
   }
 
-  void display_options_conf() {
+  void display_options_conf_curis() {
     desenha_button("VOLTAR", button_back_2[0], button_back_2[1], button_back_2[2], button_back_2[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
     desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
     desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
     desenha_button("10", numero[0], numero[1], numero[2], numero[3]);
+  }
+  
+  void display_options_conf_rakis() {
+    desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
+    desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
+    desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
+    desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
+    desenha_button("5", numero[0], numero[1], numero[2], numero[3]);
+  }
+  
+  void display_options_conf_gafis() {
+    desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
+    desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
+    desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
+    desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
+    desenha_button("20", numero[0], numero[1], numero[2], numero[3]);
   }
 }
