@@ -55,7 +55,7 @@ void mousePressed() {
     if (mouseX > mm.button_rakis[0] && mouseX < mm.button_rakis[2] && mouseY > mm.button_rakis[1] && mouseY < mm.button_rakis[3]) {
       mm.current_screen = "OPTIONS_CONF_RAKIS";
     }
-    
+
     if (mouseX > mm.button_gafis[0] && mouseX < mm.button_gafis[2] && mouseY > mm.button_gafis[1] && mouseY < mm.button_gafis[3]) {
       mm.current_screen = "OPTIONS_CONF_GAFIS";
     }
@@ -67,7 +67,7 @@ void mousePressed() {
 
     if (mouseX > mm.button_less[0] && mouseX < mm.button_less[2] && mouseY > mm.button_less[1] && mouseY < mm.button_less[3]) {
     }
-  
+
     if (mouseX > mm.button_back_2[0] && mouseX < mm.button_back_2[2] && mouseY > mm.button_back_2[1] && mouseY < mm.button_back_2[3]) {
       mm.current_screen = "OPTIONS_MENU";      // Volta para o OPTIONS_MENU
     }

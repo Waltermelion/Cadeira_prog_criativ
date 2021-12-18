@@ -114,12 +114,12 @@ class Main_Menu {
     numero[1] = 550;
     numero[2] = 1000;
     numero[3] = 580;
-    
+
     button_back_3[0] = 50;      //x1
     button_back_3[1] = 40;      //y1
     button_back_3[2] = 200;     //t1
     button_back_3[3] = 90;
-    
+
     button_back_4[0] = 50;      //x1
     button_back_4[1] = 40;      //y1
     button_back_4[2] = 200;     //t1
@@ -163,7 +163,7 @@ class Main_Menu {
     desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
     desenha_button("10", numero[0], numero[1], numero[2], numero[3]);
   }
-  
+
   void display_options_conf_rakis() {
     desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
@@ -171,7 +171,7 @@ class Main_Menu {
     desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
     desenha_button("5", numero[0], numero[1], numero[2], numero[3]);
   }
-  
+
   void display_options_conf_gafis() {
     desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
