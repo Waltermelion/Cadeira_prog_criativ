@@ -1,17 +1,17 @@
 class Main_Menu {
 
-  GameStart gm;
-  Options op;
+  GameStart gm;//Classe inicializada ao clicar no botão "Start Game" dentro do jogo
+  Options op;//Classe inicializada ao clicar no botão "Options" dentro do jogo
 
   float x, y, c, l;
   float x1, y1, c1, l1;
   float x2, y2, c2, l2;
-  boolean b1, b2, b3, b4, b5, b6, b7;
+  boolean b1, b2, b3, b4, b5, b6, b7;//Botão 1-7
 
   Main_Menu() {
 
-    gm = new GameStart();
-    op = new Options();
+    gm = new GameStart();//Declarar Game Start
+    op = new Options();//Declarar Options
 
     x = width/2-125;
     y = height/2 -50;
@@ -59,7 +59,7 @@ class Main_Menu {
     else fill(255);
     text("Exit", width/2, height/2 + 200);
 
-    if (b1) gm.desenha();
-    if (b2) op.desenha();
+    if (b1) gm.desenha();//Se o butão 1 for clicado -> Desenha o Game Start(jogo começa)
+    if (b2) op.desenha();//Se o butão 2 for clicado -> Desenha o Options(Abre o "separador" de opções personalizaveis)
   }
 }
