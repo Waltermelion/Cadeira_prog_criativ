@@ -30,23 +30,23 @@ class Curis {
     }  
     if (posY < tam/2) {
       posY = tam/2;
-    }
-    if (vida >= 20){
-      vida = 20;
-    }
-    if (fome <= 0){
-      alive = false;
-    }
-    while (alive) {
+    }        
+    //while (alive) {
+      posY += random(-vel, vel);
+      posX += random(-vel, vel);
       fill(0);
       ellipse(posX, posY, tam, tam);      
       fome -= 0.0001;
       vida += 0.0001;
-      //t += random(-0.02, 0.02);
-      posY += random(-vel, vel);
-      posX += random(-vel, vel);
-      println(vida);
-      println(fome);
+      //t += random(-0.02, 0.02);      
+      println(c.vida);
+      println(c.fome);
+      if (fome <= 0){
+      alive = false;
     }
+    if (vida >= 20){
+      vida = 20;
+    }
+    //}
   }
 }
