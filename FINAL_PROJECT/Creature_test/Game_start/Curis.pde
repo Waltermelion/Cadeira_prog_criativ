@@ -31,7 +31,7 @@ class Curis {
     if (posY < tam/2) {
       posY = tam/2;
     }        
-    while (alive) {
+    //while (alive) {
       posY += random(-vel, vel);
       posX += random(-vel, vel);
       fill(0);
@@ -47,6 +47,6 @@ class Curis {
     if (vida >= 20){
       vida = 20;
     }
-    }
+    //}
   }
 }
