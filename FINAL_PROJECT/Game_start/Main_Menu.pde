@@ -39,7 +39,7 @@ class Main_Menu {
   void desenha() {
     background(COLOR_BACKGROUND);
 
-    if (current_screen .equals("MAIN MENU")) {
+    if (current_screen .equals("MAIN MENU")) {            //Condição dependendo do current screen que está
       display_main_menu();
     } else if (current_screen .equals("GAME_START")) {
       display_game_start();
@@ -151,24 +151,28 @@ class Main_Menu {
     text(my_text, 21 + x1, 12 + y1 + ( (t2 - y1) / 2 ));
   }
 
-  void display_main_menu() {
+  void display_main_menu() {      //Main menu com as 3 opçoes
+  
     desenha_button("START GAME", button_game_start[0], button_game_start[1], button_game_start[2], button_game_start[3]);
     desenha_button("OPTIONS", button_options[0], button_options[1], button_options[2], button_options[3]);
     desenha_button("EXIT", button_exit[0], button_exit[1], button_exit[2], button_exit[3]);
   }
 
-  void display_game_start() {
+  void display_game_start() {  //Dentro do START GAME
+  
     desenha_button("VOLTAR", button_back_5[0], button_back_5[1], button_back_5[2], button_back_5[3]);
   }
   
-  void display_options_menu() {
+  void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres
+  
     desenha_button("VOLTAR", button_back_1[0], button_back_1[1], button_back_1[2], button_back_1[3]);
     desenha_button("CURIS", button_curis[0], button_curis[1], button_curis[2], button_curis[3]);
     desenha_button("GAFIS", button_gafis[0], button_gafis[1], button_gafis[2], button_gafis[3]);
     desenha_button("RAKIS", button_rakis[0], button_rakis[1], button_rakis[2], button_rakis[3]);
   }
 
-  void display_options_conf_curis() {
+  void display_options_conf_curis() {    //Dentro do CURIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 10 
+  
     desenha_button("VOLTAR", button_back_2[0], button_back_2[1], button_back_2[2], button_back_2[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
     desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
@@ -176,7 +180,8 @@ class Main_Menu {
     desenha_button("10", numero[0], numero[1], numero[2], numero[3]);
   }
 
-  void display_options_conf_rakis() {
+  void display_options_conf_rakis() {    //Dentro do RAKIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 5
+  
     desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
     desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
@@ -184,7 +189,8 @@ class Main_Menu {
     desenha_button("5", numero[0], numero[1], numero[2], numero[3]);
   }
 
-  void display_options_conf_gafis() {
+  void display_options_conf_gafis() {      //Dentro do GAFIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 20 
+  
     desenha_button("VOLTAR", button_back_4[0], button_back_4[1], button_back_4[2], button_back_4[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
     desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);

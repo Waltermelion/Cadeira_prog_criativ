@@ -40,43 +40,43 @@ void display_options_conf() {
 }
 
 void mousePressed() {
-  if (mm.current_screen .equals("MAIN MENU")) {
+  if (mm.current_screen .equals("MAIN MENU")) {       //Se o ecrã que estiver se chamar "MAIN MENU" faz... 
     
     if (mouseX > mm.button_game_start[0] && mouseX < mm.button_game_start[2] && mouseY > mm.button_game_start[1] && mouseY < mm.button_game_start[3]) {
-      mm.current_screen = "GAME_START";
+      mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
       
     }
 
     if (mouseX > mm.button_options[0] && mouseX < mm.button_options[2] && mouseY > mm.button_options[1] && mouseY < mm.button_options[3]) {
-      mm.current_screen = "OPTIONS_MENU";
+      mm.current_screen = "OPTIONS_MENU";     //Se clicar no botão OPTIONS vou para o ecrã OPTIONS_MENU
     }
 
     if (mouseX > mm.button_exit[0] && mouseX < mm.button_exit[2] && mouseY > mm.button_exit[1] && mouseY < mm.button_exit[3]) {
-      exit();
+      exit();     //Se clicar no botão EXIT saio do programa
     }
-  } else if (mm.current_screen .equals("GAME_START")) {
+  } else if (mm.current_screen .equals("GAME_START")) {   //Se o ecrã que estiver se chamar "GAME_START" faz... 
     
     if (mouseX > mm.button_back_5[0] && mouseX < mm.button_back_5[2] && mouseY > mm.button_back_5[1] && mouseY < mm.button_back_5[3]) {
-      mm.current_screen = "MAIN MENU";
+      mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_MENU")) {
+  } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz... 
 
     if (mouseX > mm.button_curis[0] && mouseX < mm.button_curis[2] && mouseY > mm.button_curis[1] && mouseY < mm.button_curis[3]) {
-      mm.current_screen = "OPTIONS_CONF_CURIS";
+      mm.current_screen = "OPTIONS_CONF_CURIS";    //Se clicar no botão CURIS vou para o ecrã OPTIONS_CONF_CURIS
     }
 
     if (mouseX > mm.button_rakis[0] && mouseX < mm.button_rakis[2] && mouseY > mm.button_rakis[1] && mouseY < mm.button_rakis[3]) {
-      mm.current_screen = "OPTIONS_CONF_RAKIS";
+      mm.current_screen = "OPTIONS_CONF_RAKIS";      //Se clicar no botão RAKIS vou para o ecrã OPTIONS_CONF_RAKIS
     }
 
     if (mouseX > mm.button_gafis[0] && mouseX < mm.button_gafis[2] && mouseY > mm.button_gafis[1] && mouseY < mm.button_gafis[3]) {
-      mm.current_screen = "OPTIONS_CONF_GAFIS";
+      mm.current_screen = "OPTIONS_CONF_GAFIS";      //Se clicar no botão GAFIS vou para o ecrã OPTIONS_CONF_GAFIS
     }
 
     if (mouseX > mm.button_back_1[0] && mouseX < mm.button_back_1[2] && mouseY > mm.button_back_1[1] && mouseY < mm.button_back_1[3]) {
-      mm.current_screen = "MAIN MENU";
+      mm.current_screen = "MAIN MENU";        //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU 
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {
+  } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz... 
 
     if (mouseX > mm.button_less[0] && mouseX < mm.button_less[2] && mouseY > mm.button_less[1] && mouseY < mm.button_less[3]) {
     }
@@ -84,13 +84,15 @@ void mousePressed() {
     if (mouseX > mm.button_back_2[0] && mouseX < mm.button_back_2[2] && mouseY > mm.button_back_2[1] && mouseY < mm.button_back_2[3]) {
       mm.current_screen = "OPTIONS_MENU";      // Volta para o OPTIONS_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {
+  } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz... 
+  
     if (mouseX > mm.button_back_3[0] && mouseX < mm.button_back_3[2] && mouseY > mm.button_back_3[1] && mouseY < mm.button_back_3[3]) {
-      mm.current_screen = "OPTIONS_MENU";
+      mm.current_screen = "OPTIONS_MENU";    // Volta para o OPTIONS_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {
+  } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz... 
+  
     if (mouseX > mm.button_back_4[0] && mouseX < mm.button_back_4[2] && mouseY > mm.button_back_4[1] && mouseY < mm.button_back_4[3]) {
-      mm.current_screen = "OPTIONS_MENU";
+      mm.current_screen = "OPTIONS_MENU";    // Volta para o OPTIONS_MENU
     }
   }
 }
