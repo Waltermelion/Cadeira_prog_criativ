@@ -6,13 +6,13 @@ class Main_Menu {
   String current_screen;
   int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4, button_back_5;
   int[] button_curis, button_rakis, button_gafis;
-  int[] button_quantidade, button_more, button_less, numero;
+  int[] button_quantidade, button_more, button_less, button_more1, button_less1, button_more2, button_less2, numero;
 
   final color COLOR_WHITE = color(255);
   final color COLOR_BACKGROUND = color(0);
   final color COLOR_BUTTONS = color(50, 50, 255);
 
-  int numeroCr = 10;
+  int numeroCr = 2;
   
   Main_Menu() {
 
@@ -36,6 +36,10 @@ class Main_Menu {
     button_quantidade = new int[4];
     button_more = new int[4];
     button_less = new int[4];
+    button_more1 = new int[4];
+    button_less1 = new int[4];
+    button_more2 = new int[4];
+    button_less2 = new int[4];
     numero = new int[4];
 
     current_screen = "MAIN MENU";     // Identificar que este ecrã se chama ou se autotitula-se de MAIN MENU
@@ -124,6 +128,26 @@ class Main_Menu {
     button_more[1] = 550;
     button_more[2] = 1180;
     button_more[3] = 580;
+    
+    button_less1[0] = 750;
+    button_less1[1] = 550;
+    button_less1[2] = 810;
+    button_less1[3] = 580;
+
+    button_more1[0] = 1125;
+    button_more1[1] = 550;
+    button_more1[2] = 1180;
+    button_more1[3] = 580;
+    
+    button_less2[0] = 750;
+    button_less2[1] = 550;
+    button_less2[2] = 810;
+    button_less2[3] = 580;
+
+    button_more2[0] = 1125;
+    button_more2[1] = 550;
+    button_more2[2] = 1180;
+    button_more2[3] = 580;
 
     numero[0] = 930;
     numero[1] = 550;
@@ -194,8 +218,8 @@ class Main_Menu {
   
     desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
-    desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
-    desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
+    desenha_button("+", button_more1[0], button_more1[1], button_more1[2], button_more1[3]);
+    desenha_button("-", button_less1[0], button_less1[1], button_less1[2], button_less1[3]);
     desenha_button("5", numero[0], numero[1], numero[2], numero[3]);
   }
 
@@ -203,8 +227,8 @@ class Main_Menu {
   
     desenha_button("VOLTAR", button_back_4[0], button_back_4[1], button_back_4[2], button_back_4[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
-    desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
-    desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
+    desenha_button("+", button_more2[0], button_more2[1], button_more2[2], button_more2[3]);
+    desenha_button("-", button_less2[0], button_less2[1], button_less2[2], button_less2[3]);
     desenha_button("20", numero[0], numero[1], numero[2], numero[3]);
   }
 }

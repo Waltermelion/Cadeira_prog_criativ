@@ -4,7 +4,8 @@ final color COLOR_WHITE = color(255);
 final color COLOR_BACKGROUND = color(0);
 
 void settings() {
-  fullScreen();
+  //fullScreen();
+  size(1800, 800);
 }
 
 void setup() {
@@ -40,11 +41,14 @@ void display_options_conf() {
 }
 
 void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n3PRQ&t=4228s
-  if (mm.current_screen .equals("MAIN MENU")) {       //Se o ecrã que estiver se chamar "MAIN MENU" faz... 
-    
+  if (mm.current_screen .equals("MAIN MENU")) {       //Se o ecrã que estiver se chamar "MAIN MENU" faz...
+
     if (mouseX > mm.button_game_start[0] && mouseX < mm.button_game_start[2] && mouseY > mm.button_game_start[1] && mouseY < mm.button_game_start[3]) {
       mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
-      
+
+      for (int k = 0; k < mm.numeroCr; k++) {
+        mm.cr.crs.add(new SeresColection(random(width), random(height), 20));
+      }
     }
 
     if (mouseX > mm.button_options[0] && mouseX < mm.button_options[2] && mouseY > mm.button_options[1] && mouseY < mm.button_options[3]) {
@@ -54,12 +58,12 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
     if (mouseX > mm.button_exit[0] && mouseX < mm.button_exit[2] && mouseY > mm.button_exit[1] && mouseY < mm.button_exit[3]) {
       exit();     //Se clicar no botão EXIT saio do programa
     }
-  } else if (mm.current_screen .equals("GAME_START")) {   //Se o ecrã que estiver se chamar "GAME_START" faz... 
-    
+  } else if (mm.current_screen .equals("GAME_START")) {   //Se o ecrã que estiver se chamar "GAME_START" faz...
+
     if (mouseX > mm.button_back_5[0] && mouseX < mm.button_back_5[2] && mouseY > mm.button_back_5[1] && mouseY < mm.button_back_5[3]) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz... 
+  } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
 
     if (mouseX > mm.button_curis[0] && mouseX < mm.button_curis[2] && mouseY > mm.button_curis[1] && mouseY < mm.button_curis[3]) {
       mm.current_screen = "OPTIONS_CONF_CURIS";    //Se clicar no botão CURIS vou para o ecrã OPTIONS_CONF_CURIS
@@ -74,24 +78,44 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
     }
 
     if (mouseX > mm.button_back_1[0] && mouseX < mm.button_back_1[2] && mouseY > mm.button_back_1[1] && mouseY < mm.button_back_1[3]) {
-      mm.current_screen = "MAIN MENU";        //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU 
+      mm.current_screen = "MAIN MENU";        //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz... 
+  } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz...
 
     if (mouseX > mm.button_less[0] && mouseX < mm.button_less[2] && mouseY > mm.button_less[1] && mouseY < mm.button_less[3]) {
       mm.numeroCr = mm.numeroCr - 1;
     }
 
+    if (mouseX > mm.button_more[0] && mouseX < mm.button_more[2] && mouseY > mm.button_more[1] && mouseY < mm.button_more[3]) {
+      mm.numeroCr = mm.numeroCr + 1;
+    }
+
     if (mouseX > mm.button_back_2[0] && mouseX < mm.button_back_2[2] && mouseY > mm.button_back_2[1] && mouseY < mm.button_back_2[3]) {
       mm.current_screen = "OPTIONS_MENU";      // Volta para o OPTIONS_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz... 
-  
+  } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz...
+
+    if (mouseX > mm.button_less1[0] && mouseX < mm.button_less1[2] && mouseY > mm.button_less1[1] && mouseY < mm.button_less1[3]) {
+      mm.numeroCr = mm.numeroCr - 1;
+    }
+
+    if (mouseX > mm.button_more1[0] && mouseX < mm.button_more1[2] && mouseY > mm.button_more1[1] && mouseY < mm.button_more1[3]) {
+      mm.numeroCr = mm.numeroCr + 1;
+    }
+
     if (mouseX > mm.button_back_3[0] && mouseX < mm.button_back_3[2] && mouseY > mm.button_back_3[1] && mouseY < mm.button_back_3[3]) {
       mm.current_screen = "OPTIONS_MENU";    // Volta para o OPTIONS_MENU
     }
-  } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz... 
-  
+  } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz...
+
+    if (mouseX > mm.button_less2[0] && mouseX < mm.button_less2[2] && mouseY > mm.button_less2[1] && mouseY < mm.button_less2[3]) {
+      mm.numeroCr = mm.numeroCr - 1;
+    }
+
+    if (mouseX > mm.button_more2[0] && mouseX < mm.button_more2[2] && mouseY > mm.button_more2[1] && mouseY < mm.button_more2[3]) {
+      mm.numeroCr = mm.numeroCr + 1;
+    }
+
     if (mouseX > mm.button_back_4[0] && mouseX < mm.button_back_4[2] && mouseY > mm.button_back_4[1] && mouseY < mm.button_back_4[3]) {
       mm.current_screen = "OPTIONS_MENU";    // Volta para o OPTIONS_MENU
     }
