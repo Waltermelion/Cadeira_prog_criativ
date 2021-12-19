@@ -1,6 +1,8 @@
 class Main_Menu {
 
     Curis cr;
+    Rakis rk;
+    Gafis gf; 
     Relva el;
   
   String current_screen;
@@ -13,10 +15,14 @@ class Main_Menu {
   final color COLOR_BUTTONS = color(50, 50, 255);
 
   int numeroCr = 2;
+  int numeroRk = 2;
+  int numeroGf = 2;
   
   Main_Menu() {
 
     cr = new Curis(numeroCr);
+    rk = new Rakis(numeroRk);
+    gf = new Gafis(numeroGf);
     el = new Relva();
     
     button_game_start = new int[4];
@@ -193,6 +199,8 @@ class Main_Menu {
   
     desenha_button("VOLTAR", button_back_5[0], button_back_5[1], button_back_5[2], button_back_5[3]);
     cr.desenha_curis();
+    rk.desenha_rakis();
+    gf.desenha_gafis();
     el.desenha_relva();
 
   }

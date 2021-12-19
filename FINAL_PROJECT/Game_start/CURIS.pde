@@ -13,9 +13,9 @@ class Curis {
       SeresColection sr = crs.get(i);
       sr.move();
       sr.display();
-      if (sr.finished()) {
+      if (sr.finished() && sr.tamanho()) {
         crs.remove(i);
-        crs.add(new SeresColection(random(width), random(height), 20));
+        crs.add(new SeresColection(random(width), random(height)));
       }
     }
   }

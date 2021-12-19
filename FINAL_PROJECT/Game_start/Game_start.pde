@@ -4,8 +4,8 @@ final color COLOR_WHITE = color(255);
 final color COLOR_BACKGROUND = color(0);
 
 void settings() {
-  //fullScreen();
-  size(1800, 800);
+  fullScreen();
+  //size(1800, 800);
 }
 
 void setup() {
@@ -47,8 +47,17 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
       mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
 
       for (int k = 0; k < mm.numeroCr; k++) {
-        mm.cr.crs.add(new SeresColection(random(width), random(height), 20));
+        mm.cr.crs.add(new SeresColection(random(width), random(height)));
       }
+      
+      for (int k = 0; k < mm.numeroRk; k++) {
+        mm.rk.rks.add(new RakisQuant(random(width), random(height)));
+      }
+      
+      for (int k = 0; k < mm.numeroGf; k++) {
+        mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
+      }
+      
     }
 
     if (mouseX > mm.button_options[0] && mouseX < mm.button_options[2] && mouseY > mm.button_options[1] && mouseY < mm.button_options[3]) {
@@ -62,6 +71,7 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.button_back_5[0] && mouseX < mm.button_back_5[2] && mouseY > mm.button_back_5[1] && mouseY < mm.button_back_5[3]) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
+      return;
     }
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
 
@@ -96,11 +106,11 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz...
 
     if (mouseX > mm.button_less1[0] && mouseX < mm.button_less1[2] && mouseY > mm.button_less1[1] && mouseY < mm.button_less1[3]) {
-      mm.numeroCr = mm.numeroCr - 1;
+      mm.numeroRk = mm.numeroRk - 1;
     }
 
     if (mouseX > mm.button_more1[0] && mouseX < mm.button_more1[2] && mouseY > mm.button_more1[1] && mouseY < mm.button_more1[3]) {
-      mm.numeroCr = mm.numeroCr + 1;
+      mm.numeroRk = mm.numeroRk + 1;
     }
 
     if (mouseX > mm.button_back_3[0] && mouseX < mm.button_back_3[2] && mouseY > mm.button_back_3[1] && mouseY < mm.button_back_3[3]) {
@@ -109,11 +119,11 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz...
 
     if (mouseX > mm.button_less2[0] && mouseX < mm.button_less2[2] && mouseY > mm.button_less2[1] && mouseY < mm.button_less2[3]) {
-      mm.numeroCr = mm.numeroCr - 1;
+      mm.numeroGf = mm.numeroGf - 1;
     }
 
     if (mouseX > mm.button_more2[0] && mouseX < mm.button_more2[2] && mouseY > mm.button_more2[1] && mouseY < mm.button_more2[3]) {
-      mm.numeroCr = mm.numeroCr + 1;
+      mm.numeroGf = mm.numeroGf + 1;
     }
 
     if (mouseX > mm.button_back_4[0] && mouseX < mm.button_back_4[2] && mouseY > mm.button_back_4[1] && mouseY < mm.button_back_4[3]) {

@@ -1,16 +1,15 @@
-class SeresColection {
+class RakisQuant {
 
   float x;
   float y;
   float speed;
-  float t = 20;
+  float t = 70;
   float life = 255;
-  
 
-  SeresColection(float x1, float y1) {
+  RakisQuant(float x1, float y1) {
     x = x1;
     y = y1;
-    speed = 10;
+    speed = 20;
   }
 
   void move() {
@@ -54,7 +53,7 @@ class SeresColection {
 
   void display() {
     stroke(255, life);
-    fill(255, 0, life);
+    fill(50, 255, life);
     ellipse(x, y, t, t);
   }
 }

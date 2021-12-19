@@ -1,13 +1,12 @@
-class SeresColection {
+class GafisQuant {
 
   float x;
   float y;
   float speed;
-  float t = 20;
+  float t = 50;
   float life = 255;
-  
 
-  SeresColection(float x1, float y1) {
+  GafisQuant(float x1, float y1) {
     x = x1;
     y = y1;
     speed = 10;
@@ -54,7 +53,7 @@ class SeresColection {
 
   void display() {
     stroke(255, life);
-    fill(255, 0, life);
+    fill(50, life, 255);
     ellipse(x, y, t, t);
   }
 }
