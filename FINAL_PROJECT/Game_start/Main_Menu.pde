@@ -1,6 +1,7 @@
 class Main_Menu {
 
     Curis cr;
+    Relva el;
   
   String current_screen;
   int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4, button_back_5;
@@ -10,11 +11,13 @@ class Main_Menu {
   final color COLOR_WHITE = color(255);
   final color COLOR_BACKGROUND = color(0);
   final color COLOR_BUTTONS = color(50, 50, 255);
-  final color COLOR_CURSOR = color(255, 0, 0);
 
+  int numeroCr = 10;
+  
   Main_Menu() {
 
-    cr = new Curis();
+    cr = new Curis(numeroCr);
+    el = new Relva();
     
     button_game_start = new int[4];
     button_exit = new int[4];
@@ -58,7 +61,7 @@ class Main_Menu {
     }
   }
 
-  void buttons_info() {
+  void buttons_info() {            // referencia https://www.youtube.com/watch?v=HzI5H3n3PRQ&t=4228s
 
     button_game_start[0] = 400;      //x1
     button_game_start[1] = 550;      //y1
@@ -166,6 +169,8 @@ class Main_Menu {
   
     desenha_button("VOLTAR", button_back_5[0], button_back_5[1], button_back_5[2], button_back_5[3]);
     cr.desenha_curis();
+    el.desenha_relva();
+
   }
   
   void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres

@@ -39,7 +39,7 @@ void display_options_conf() {
   mm.display_options_conf_gafis();
 }
 
-void mousePressed() {
+void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n3PRQ&t=4228s
   if (mm.current_screen .equals("MAIN MENU")) {       //Se o ecrã que estiver se chamar "MAIN MENU" faz... 
     
     if (mouseX > mm.button_game_start[0] && mouseX < mm.button_game_start[2] && mouseY > mm.button_game_start[1] && mouseY < mm.button_game_start[3]) {
@@ -79,6 +79,7 @@ void mousePressed() {
   } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz... 
 
     if (mouseX > mm.button_less[0] && mouseX < mm.button_less[2] && mouseY > mm.button_less[1] && mouseY < mm.button_less[3]) {
+      mm.numeroCr = mm.numeroCr - 1;
     }
 
     if (mouseX > mm.button_back_2[0] && mouseX < mm.button_back_2[2] && mouseY > mm.button_back_2[1] && mouseY < mm.button_back_2[3]) {
@@ -94,14 +95,5 @@ void mousePressed() {
     if (mouseX > mm.button_back_4[0] && mouseX < mm.button_back_4[2] && mouseY > mm.button_back_4[1] && mouseY < mm.button_back_4[3]) {
       mm.current_screen = "OPTIONS_MENU";    // Volta para o OPTIONS_MENU
     }
-  }
-}
-
-void mouseMoved() {
-
-  if (mm.current_screen .equals("OPTIONS_MENU")) {
-  }
-
-  if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {
   }
 }
