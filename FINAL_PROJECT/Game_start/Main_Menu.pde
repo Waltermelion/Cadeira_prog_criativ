@@ -1,5 +1,7 @@
 class Main_Menu {
 
+    Curis cr;
+  
   String current_screen;
   int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4, button_back_5;
   int[] button_curis, button_rakis, button_gafis;
@@ -12,6 +14,8 @@ class Main_Menu {
 
   Main_Menu() {
 
+    cr = new Curis();
+    
     button_game_start = new int[4];
     button_exit = new int[4];
     button_options = new int[4];
@@ -161,6 +165,7 @@ class Main_Menu {
   void display_game_start() {  //Dentro do START GAME
   
     desenha_button("VOLTAR", button_back_5[0], button_back_5[1], button_back_5[2], button_back_5[3]);
+    cr.desenha_curis();
   }
   
   void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres
