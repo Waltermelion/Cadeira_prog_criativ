@@ -26,6 +26,9 @@ void display_main_menu() {
   mm.display_main_menu();
 }
 
+void display_game_start() {
+  mm.display_game_start();
+}
 void display_options_menu() {
   mm.display_options_menu();
 }
@@ -38,6 +41,11 @@ void display_options_conf() {
 
 void mousePressed() {
   if (mm.current_screen .equals("MAIN MENU")) {
+    
+    if (mouseX > mm.button_game_start[0] && mouseX < mm.button_game_start[2] && mouseY > mm.button_game_start[1] && mouseY < mm.button_game_start[3]) {
+      mm.current_screen = "GAME_START";
+      
+    }
 
     if (mouseX > mm.button_options[0] && mouseX < mm.button_options[2] && mouseY > mm.button_options[1] && mouseY < mm.button_options[3]) {
       mm.current_screen = "OPTIONS_MENU";
@@ -45,6 +53,11 @@ void mousePressed() {
 
     if (mouseX > mm.button_exit[0] && mouseX < mm.button_exit[2] && mouseY > mm.button_exit[1] && mouseY < mm.button_exit[3]) {
       exit();
+    }
+  } else if (mm.current_screen .equals("GAME_START")) {
+    
+    if (mouseX > mm.button_back_5[0] && mouseX < mm.button_back_5[2] && mouseY > mm.button_back_5[1] && mouseY < mm.button_back_5[3]) {
+      mm.current_screen = "MAIN MENU";
     }
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {
 

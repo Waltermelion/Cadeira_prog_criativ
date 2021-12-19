@@ -1,7 +1,7 @@
 class Main_Menu {
 
   String current_screen;
-  int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4;
+  int[] button_game_start, button_exit, button_options, button_back_1, button_back_2, button_back_3, button_back_4, button_back_5;
   int[] button_curis, button_rakis, button_gafis;
   int[] button_quantidade, button_more, button_less, numero;
 
@@ -20,6 +20,7 @@ class Main_Menu {
     button_back_2 = new int[4];
     button_back_3 = new int[4];
     button_back_4 = new int[4];
+    button_back_5 = new int[4];
 
     button_curis = new int[4];
     button_rakis = new int[4];
@@ -40,6 +41,8 @@ class Main_Menu {
 
     if (current_screen .equals("MAIN MENU")) {
       display_main_menu();
+    } else if (current_screen .equals("GAME_START")) {
+      display_game_start();
     } else if (current_screen .equals("OPTIONS_MENU")) {
       display_options_menu();
     } else if (current_screen .equals("OPTIONS_CONF_CURIS")) {
@@ -57,6 +60,11 @@ class Main_Menu {
     button_game_start[1] = 550;      //y1
     button_game_start[2] = 630;      //t1
     button_game_start[3] = 600;      //t2
+    
+    button_back_5[0] = 50;      //x1
+    button_back_5[1] = 40;      //y1
+    button_back_5[2] = 200;     //t1
+    button_back_5[3] = 90;
 
     button_options[0] = 850;      //x1
     button_options[1] = 550;      //y1
@@ -149,6 +157,10 @@ class Main_Menu {
     desenha_button("EXIT", button_exit[0], button_exit[1], button_exit[2], button_exit[3]);
   }
 
+  void display_game_start() {
+    desenha_button("VOLTAR", button_back_5[0], button_back_5[1], button_back_5[2], button_back_5[3]);
+  }
+  
   void display_options_menu() {
     desenha_button("VOLTAR", button_back_1[0], button_back_1[1], button_back_1[2], button_back_1[3]);
     desenha_button("CURIS", button_curis[0], button_curis[1], button_curis[2], button_curis[3]);
@@ -173,7 +185,7 @@ class Main_Menu {
   }
 
   void display_options_conf_gafis() {
-    desenha_button("VOLTAR", button_back_3[0], button_back_3[1], button_back_3[2], button_back_3[3]);
+    desenha_button("VOLTAR", button_back_4[0], button_back_4[1], button_back_4[2], button_back_4[3]);
     desenha_button("QUANTIDADE", button_quantidade[0], button_quantidade[1], button_quantidade[2], button_quantidade[3]);
     desenha_button("+", button_more[0], button_more[1], button_more[2], button_more[3]);
     desenha_button("-", button_less[0], button_less[1], button_less[2], button_less[3]);
