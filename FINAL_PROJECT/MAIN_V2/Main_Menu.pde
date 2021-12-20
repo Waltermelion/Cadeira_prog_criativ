@@ -58,7 +58,7 @@ class Main_Menu {
   void display_game_start() {  //Dentro do START GAME
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
-    back.desenha_button();
+    back.desenha_button();    
     cr.desenha_curis();
     rk.desenha_rakis();
     gf.desenha_gafis();
