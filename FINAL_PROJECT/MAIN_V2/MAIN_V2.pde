@@ -46,19 +46,22 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
     if (mouseX > mm.start_game.x && mouseX < mm.start_game.t && mouseY > mm.start_game.y && mouseY < mm.start_game.ta) {
       mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
       
-      if(mm.cr.crs.size()-1 == mm.numeroCr){ //se a quantidade de jovens na lista for maior que a quantidade de jovens no numeroCr, numero de jovens na lista = numeroCr
-      for (int k = 0; k < mm.numeroCr; k++) {
-       mm.cr.crs.add(new CurisQuant(random(width), random(height)));
+       //se a quantidade de jovens na lista for maior que a quantidade de jovens no numeroCr, numero de jovens na lista = numeroCr      
+      for (int k = 0; k < mm.numeroCr; k++) {       
+       if(mm.cr.crs.size() != mm.numeroCr){
+         mm.cr.crs.add(new CurisQuant(random(width), random(height)));
        }
       }
-      if(mm.rk.rks.size()-1 == mm.numeroRk){
-       for (int k = 0; k < mm.numeroRk; k++) {
-       mm.rk.rks.add(new RakisQuant(random(width), random(height)));
+      
+       for (int k = 0; k < mm.numeroRk; k++) {       
+       if(mm.rk.rks.size() != mm.numeroRk){
+         mm.rk.rks.add(new RakisQuant(random(width), random(height)));
        }
       }
-      if(mm.gf.gfs.size()-1 == mm.numeroGf){
-       for (int k = 0; k < mm.numeroGf; k++) {
-       mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
+      
+       for (int k = 0; k < mm.numeroGf; k++) {      
+       if(mm.gf.gfs.size() != mm.numeroGf){
+          mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
        }
       }
     }
