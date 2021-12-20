@@ -12,8 +12,7 @@ class Rakis {
       sr.move();
       sr.display();
       if (sr.finished() && sr.tamanho()) {
-        rks.remove(i);
-        rks.add(new RakisQuant(random(width), random(height)));
+        rks.remove(i);        
       }
     }
   }

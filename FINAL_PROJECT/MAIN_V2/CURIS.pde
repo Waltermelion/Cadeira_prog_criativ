@@ -11,9 +11,9 @@ class Curis {
       CurisQuant sr = crs.get(i);
       sr.move();
       sr.display();
+      sr.eat();
       if (sr.finished() && sr.tamanho()) {
-        crs.remove(i);
-        crs.add(new CurisQuant(random(width), random(height)));
+        crs.remove(i);        
       }
     }
   }

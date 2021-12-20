@@ -1,10 +1,10 @@
 class Relva {
 
   ArrayList<RelvaQuant> rl;
+  float x,y;
 
-  Relva() {
-    rl = new ArrayList<RelvaQuant>();
-  
+  Relva(int n) {
+    rl = new ArrayList<RelvaQuant>();  
   for(int k = 0; k < 5; k++) {
       rl.add(new RelvaQuant(random(width), random(height), 20));    
   }

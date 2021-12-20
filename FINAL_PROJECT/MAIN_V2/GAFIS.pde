@@ -12,8 +12,7 @@ class Gafis {
       sr.move();
       sr.display();
       if (sr.finished() && sr.tamanho()) {
-        gfs.remove(i);
-        gfs.add(new GafisQuant(random(width), random(height)));
+        gfs.remove(i);        
       }
     }
   }

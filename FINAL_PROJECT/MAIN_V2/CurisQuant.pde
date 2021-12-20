@@ -34,7 +34,12 @@ class CurisQuant {
   }
   
   void eat(){
-    
+    float d = dist(mm.el.x,mm.el.y, x,y );
+    for (int i = mm.cr.crs.size()-1; i >= 0; i--) {
+    if(d <= 20){
+      mm.el.rl.remove(i);
+    }    
+  }
   }
 
   boolean finished() {
