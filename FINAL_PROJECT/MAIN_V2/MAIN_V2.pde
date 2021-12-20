@@ -41,17 +41,24 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.start_game.x && mouseX < mm.start_game.t && mouseY > mm.start_game.y && mouseY < mm.start_game.ta) {
       mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
-
-      for (int k = 0; k < mm.numeroCr; k++) {
-        mm.cr.crs.add(new SeresColection(random(width), random(height)));
+      
+       //se a quantidade de jovens na lista for maior que a quantidade de jovens no numeroCr, numero de jovens na lista = numeroCr      
+      for (int k = 0; k < mm.numeroCr; k++) {       
+       if(mm.cr.crs.size() != mm.numeroCr){
+         mm.cr.crs.add(new CurisQuant(random(width), random(height)));
+       }
       }
-
-      for (int k = 0; k < mm.numeroRk; k++) {
-        mm.rk.rks.add(new RakisQuant(random(width), random(height)));
+      
+       for (int k = 0; k < mm.numeroRk; k++) {       
+       if(mm.rk.rks.size() != mm.numeroRk){
+         mm.rk.rks.add(new RakisQuant(random(width), random(height)));
+       }
       }
-
-      for (int k = 0; k < mm.numeroGf; k++) {
-        mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
+      
+       for (int k = 0; k < mm.numeroGf; k++) {      
+       if(mm.gf.gfs.size() != mm.numeroGf){
+          mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
+       }
       }
     }
 
@@ -66,6 +73,19 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
+
+      for (int k = mm.cr.crs.size()-1; k >= 0; k--) {   //Retira os jovens que puseste lá dentro para que eles voltem a aparecer   
+         mm.cr.crs.remove(k);         
+      }
+      
+        for (int k = mm.rk.rks.size()-1; k >= 0; k--) {      
+         mm.rk.rks.remove(k);          
+      }
+      
+        for (int k = mm.gf.gfs.size()-1; k >= 0; k--) {      
+         mm.gf.gfs.remove(k);          
+      }
+      return;
     }
 
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
@@ -88,7 +108,9 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroCr = mm.numeroCr - 1;
+      if(mm.numeroCr > 1)  mm.numeroCr = mm.numeroCr - 1;
+      else if(mm.numeroCr == 1) mm.numeroCr =1;
+             
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {
@@ -101,7 +123,8 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroRk = mm.numeroRk - 1;
+      if(mm.numeroRk > 1)  mm.numeroRk = mm.numeroRk - 1;
+      else if(mm.numeroRk == 1) mm.numeroRk =1;
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {
@@ -114,7 +137,8 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroGf = mm.numeroGf - 1;
+      if(mm.numeroGf > 1)  mm.numeroGf = mm.numeroGf - 1;
+      else if(mm.numeroGf == 1) mm.numeroGf =1;
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {

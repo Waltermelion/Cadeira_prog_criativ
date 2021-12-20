@@ -1,4 +1,4 @@
-class SeresColection {
+class CurisQuant {
 
   float x;
   float y;
@@ -7,7 +7,7 @@ class SeresColection {
   float life = 255;
   
 
-  SeresColection(float x1, float y1) {
+  CurisQuant(float x1, float y1) {
     x = x1;
     y = y1;
     speed = 10;

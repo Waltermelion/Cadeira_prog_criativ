@@ -1,21 +1,19 @@
 class Curis {
 
-  ArrayList<SeresColection> crs;
+  ArrayList<CurisQuant> crs;
 
   Curis(int n) {
-    crs = new ArrayList<SeresColection>();
-
-    
+    crs = new ArrayList<CurisQuant>();
   }
   void desenha_curis() {
     for (int i = crs.size()-1; i >= 0; i--) {
 
-      SeresColection sr = crs.get(i);
+      CurisQuant sr = crs.get(i);
       sr.move();
       sr.display();
       if (sr.finished() && sr.tamanho()) {
         crs.remove(i);
-        crs.add(new SeresColection(random(width), random(height)));
+        crs.add(new CurisQuant(random(width), random(height)));
       }
     }
   }
