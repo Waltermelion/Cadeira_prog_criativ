@@ -32,6 +32,10 @@ class CurisQuant {
 
     x += random(-speed, speed);
   }
+  
+  void eat(){
+    
+  }
 
   boolean finished() {
     life--;
