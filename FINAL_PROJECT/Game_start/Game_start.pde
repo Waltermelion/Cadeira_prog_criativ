@@ -13,15 +13,10 @@ void setup() {
   mm = new Main_Menu();
 
   mm.current_screen = "MAIN MENU";
-  
 }
 
 void draw() {
   mm.desenha();
-}
-
-void buttons_info() {
-  mm.buttons_info();
 }
 
 void display_main_menu() {
@@ -71,8 +66,8 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
-      return;
     }
+
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
 
     if (mouseX > mm.curis1.x && mouseX < mm.curis1.t && mouseY > mm.curis1.y && mouseY < mm.curis1.ta) {
