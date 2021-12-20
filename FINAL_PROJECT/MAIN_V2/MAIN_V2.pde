@@ -77,6 +77,17 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
+      for (int k = mm.cr.crs.size()-1; k >= 0; k--) {   //Retira os jovens que puseste lá dentro para que eles voltem a aparecer   
+         mm.cr.crs.remove(k);         
+      }
+      
+        for (int k = mm.rk.rks.size()-1; k >= 0; k--) {      
+         mm.rk.rks.remove(k);          
+      }
+      
+        for (int k = mm.gf.gfs.size()-1; k >= 0; k--) {      
+         mm.gf.gfs.remove(k);          
+      }
       return;
     }
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
