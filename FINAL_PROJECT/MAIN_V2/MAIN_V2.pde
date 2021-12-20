@@ -13,7 +13,6 @@ void setup() {
   mm = new Main_Menu();
 
   mm.current_screen = "MAIN MENU";
-  
 }
 
 void draw() {
@@ -46,18 +45,18 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.start_game.x && mouseX < mm.start_game.t && mouseY > mm.start_game.y && mouseY < mm.start_game.ta) {
       mm.current_screen = "GAME_START";      //Se clicar no botão GAME START vou para o ecrã GAME_START
-
-      for (int k = 0; k < mm.numeroCr; k++) {
-        mm.cr.crs.add(new SeresColection(random(width), random(height)));
-      }
-
-      for (int k = 0; k < mm.numeroRk; k++) {
-        mm.rk.rks.add(new RakisQuant(random(width), random(height)));
-      }
-
-      for (int k = 0; k < mm.numeroGf; k++) {
-        mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
-      }
+      
+      /*for (int k = 0; k < mm.numeroCr; k++) {
+       mm.cr.crs.add(new CurisQuant(random(width), random(height)));
+       }
+       
+       for (int k = 0; k < mm.numeroRk; k++) {
+       mm.rk.rks.add(new RakisQuant(random(width), random(height)));
+       }
+       
+       for (int k = 0; k < mm.numeroGf; k++) {
+       mm.gf.gfs.add(new GafisQuant(random(width), random(height)));
+       }*/
     }
 
     if (mouseX > mm.options.x && mouseX < mm.options.t && mouseY > mm.options.y && mouseY < mm.options.ta) {
