@@ -43,7 +43,7 @@ class RakisQuant {
   
   boolean tamanho() {
     t--;
-    if (t < 0) {
+    if (t <= 0) {
       return true;
     } else {
       return false;
@@ -53,7 +53,7 @@ class RakisQuant {
 
   void display() {
     stroke(255, life);
-    fill(50, 255, life);
+    fill(255, life, 0);
     ellipse(x, y, t, t);
   }
 }

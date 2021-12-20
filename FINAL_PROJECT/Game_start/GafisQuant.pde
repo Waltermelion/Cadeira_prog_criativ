@@ -53,7 +53,7 @@ class GafisQuant {
 
   void display() {
     stroke(255, life);
-    fill(50, life, 255);
+    fill(life, 0, 255);
     ellipse(x, y, t, t);
   }
 }

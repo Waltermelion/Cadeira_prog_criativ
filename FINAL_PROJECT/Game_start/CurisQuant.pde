@@ -54,7 +54,7 @@ class SeresColection {
 
   void display() {
     stroke(255, life);
-    fill(255, 0, life);
+    fill(0, 255, life);
     ellipse(x, y, t, t);
   }
 }
