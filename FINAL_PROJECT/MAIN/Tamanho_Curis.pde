@@ -1,4 +1,4 @@
-class Tamanho {
+class Tamanho {//Classe para determinar o tamanho dos Curis
 
   float x3, y3, c3, l3;
   float x9, y9, c9, l9;

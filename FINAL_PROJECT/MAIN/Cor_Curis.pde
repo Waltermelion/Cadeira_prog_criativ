@@ -1,4 +1,4 @@
-class Cores {
+class Cores {//Classe para o utilizador mudar a cor dos seres Curis
 
 float x3, y3, c3, l3;
 float x12, y12, c12, l12;

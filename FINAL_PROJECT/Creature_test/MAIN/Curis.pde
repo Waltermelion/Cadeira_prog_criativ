@@ -4,20 +4,18 @@ class Curis {
   float fome;
   float t = 2;
   float vel = 10;
-  color c;
   Boolean alive;
 
   Curis() {
     posX = random(width);
     posY = random(height);
-    tam = 20;
+    tam = 50;
     vida = 1;
     fome = 50;
     alive = true;
-    c = color(255,0,0);
   }
 
-  void spawnC() {
+  void spawnC() {      
     //float num = noise(t);
     //num = map(num, 0, 1, 0, width);    
     //posY = num;
@@ -32,23 +30,23 @@ class Curis {
     }  
     if (posY < tam/2) {
       posY = tam/2;
+    }        
+    //while (alive) {
+      posY += random(-vel, vel);
+      posX += random(-vel, vel);
+      fill(0);
+      ellipse(posX, posY, tam, tam);      
+      fome -= 0.0001;
+      vida += 0.0001;
+      //t += random(-0.02, 0.02);      
+      println(c.vida);
+      println(c.fome);
+      if (fome <= 0){
+      alive = false;
     }
     if (vida >= 20){
       vida = 20;
     }
-    if (fome <= 0){
-      alive = false;
-    }
-    while (alive) {
-      fill(c);
-      ellipse(posX, posY, tam, tam);      
-      fome -= 0.0001;
-      vida += 0.0001;
-      //t += random(-0.02, 0.02);
-      posY += random(-vel, vel);
-      posX += random(-vel, vel);
-      //println(vida);
-      //println(fome);
-    }
+    //}
   }
 }

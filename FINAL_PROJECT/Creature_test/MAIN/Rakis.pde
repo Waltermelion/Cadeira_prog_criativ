@@ -1,11 +1,11 @@
-class Gafis {
+class Rakis {
   float posX, posY, tam;
   float vida;
   float fome;
   float t = 2;
   float vel = 10;
 
-  Gafis() {
+  Rakis() {
     posX = random(width);
     posY = random(height);
     tam = 50;
@@ -13,7 +13,7 @@ class Gafis {
     fome = 50;
   }
 
-  void spawnG() {      
+  void spawnR() {      
     float num = noise(t);
     num = map(num, 0, 1, 0, width);    
     posY = num;
@@ -34,6 +34,6 @@ class Gafis {
 
     t += random(-0.02, 0.02);
 
-    c.posX += random(-vel, vel);
+    posX += random(-vel, vel);
   }
 }
