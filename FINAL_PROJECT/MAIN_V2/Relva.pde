@@ -5,7 +5,7 @@ class Relva {
 
   Relva(int n) {
     rl = new ArrayList<RelvaQuant>();  
-  for(int k = 0; k < 5; k++) {
+  for(int k = 0; k < n; k++) {
       rl.add(new RelvaQuant(random(width), random(height), 20));    
   }
     }

@@ -11,13 +11,14 @@ class Main_Menu {
   int numeroCr = 2;
   int numeroRk = 2;
   int numeroGf = 2;
+  int numeroRlv = 5;
 
   Main_Menu() {
 
     cr = new Curis(numeroCr);
     rk = new Rakis(numeroRk);
     gf = new Gafis(numeroGf);
-    el = new Relva();
+    el = new Relva(numeroRlv);
     current_screen = "MAIN MENU";     // Identificar que este ecrã se chama ou se autotitula-se de MAIN MENU
   }
 
