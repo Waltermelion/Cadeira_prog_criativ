@@ -3,10 +3,7 @@ class Button {
   final color COLOR_WHITE = color(255);
   final color COLOR_BACKGROUND = color(0);
   final color COLOR_BUTTONS = color(50, 50, 255);
-    //button_game_start[0] = 400;      //x1
-    //button_game_start[1] = 550;      //y1
-    //button_game_start[2] = 630;      //t1
-    //button_game_start[3] = 600;      //t2
+
     float x, y, t, ta;
     String my_text1;
 

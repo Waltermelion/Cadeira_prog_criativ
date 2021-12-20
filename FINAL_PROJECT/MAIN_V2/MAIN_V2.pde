@@ -19,10 +19,6 @@ void draw() {
   mm.desenha();
 }
 
-void buttons_info() {
-  mm.buttons_info();
-}
-
 void display_main_menu() {
   mm.display_main_menu();
 }
@@ -77,6 +73,7 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
       mm.current_screen = "MAIN MENU";     //Se clicar no botão VOLTAR volto para o ecrã MAIN_MENU
+
       for (int k = mm.cr.crs.size()-1; k >= 0; k--) {   //Retira os jovens que puseste lá dentro para que eles voltem a aparecer   
          mm.cr.crs.remove(k);         
       }
@@ -90,6 +87,7 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
       }
       return;
     }
+
   } else if (mm.current_screen .equals("OPTIONS_MENU")) {  //Se o ecrã que estiver se chamar "OPTIONS_MENU" faz...
 
     if (mouseX > mm.curis1.x && mouseX < mm.curis1.t && mouseY > mm.curis1.y && mouseY < mm.curis1.ta) {
@@ -110,7 +108,9 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_CURIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_CURIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroCr = mm.numeroCr - 1;
+      if(mm.numeroCr > 1)  mm.numeroCr = mm.numeroCr - 1;
+      else if(mm.numeroCr == 1) mm.numeroCr =1;
+             
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {
@@ -123,7 +123,8 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_RAKIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_RAKIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroRk = mm.numeroRk - 1;
+      if(mm.numeroRk > 1)  mm.numeroRk = mm.numeroRk - 1;
+      else if(mm.numeroRk == 1) mm.numeroRk =1;
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {
@@ -136,7 +137,8 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
   } else if (mm.current_screen .equals("OPTIONS_CONF_GAFIS")) {  //Se o ecrã que estiver se chamar "OPTIONS_CONF_GAFIS" faz...
 
     if (mouseX > mm.less.x && mouseX < mm.less.t && mouseY > mm.less.y && mouseY < mm.less.ta) {
-      mm.numeroGf = mm.numeroGf - 1;
+      if(mm.numeroGf > 1)  mm.numeroGf = mm.numeroGf - 1;
+      else if(mm.numeroGf == 1) mm.numeroGf =1;
     }
 
     if (mouseX > mm.more.x && mouseX < mm.more.t && mouseY > mm.more.y && mouseY < mm.more.ta) {
