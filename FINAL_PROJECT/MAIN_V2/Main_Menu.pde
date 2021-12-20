@@ -1,6 +1,6 @@
 class Main_Menu {
 
-  Button start_game, options, exit, back, curis1, rakis1, gafis1, quantidade, more, less;
+  Button start_game, options, exit, back, curis1, rakis1, gafis1, quantidade, more, less, quantidadeNum;
   Curis cr;
   Rakis rk;
   Gafis gf;
@@ -81,10 +81,12 @@ class Main_Menu {
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
+    quantidadeNum = new Button(str(numeroCr), 930, 550, 990, 580);
     more = new Button("+", 750, 550, 810, 580);
     less = new Button("-", 1125, 550, 1180, 580);
     back.desenha_button();
     quantidade.desenha_button();
+    quantidadeNum.desenha_button();
     more.desenha_button();
     less.desenha_button();
   }
@@ -93,10 +95,12 @@ class Main_Menu {
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
+    quantidadeNum = new Button(str(numeroRk), 930, 550, 990, 580);
     more = new Button("+", 750, 550, 810, 580);
     less = new Button("-", 1125, 550, 1180, 580);
     back.desenha_button();
     quantidade.desenha_button();
+    quantidadeNum.desenha_button();
     more.desenha_button();
     less.desenha_button();
   }
@@ -105,10 +109,12 @@ class Main_Menu {
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
+    quantidadeNum = new Button(str(numeroGf), 930, 550, 990, 580);
     more = new Button("+", 750, 550, 810, 580);
     less = new Button("-", 1125, 550, 1180, 580);
     back.desenha_button();
     quantidade.desenha_button();
+    quantidadeNum.desenha_button();
     more.desenha_button();
     less.desenha_button();
   }
