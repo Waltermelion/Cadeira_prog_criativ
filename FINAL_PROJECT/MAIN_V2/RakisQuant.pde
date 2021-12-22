@@ -3,7 +3,7 @@ class RakisQuant {
   float x;
   float y;
   float speed;
-  float t = 70;
+  float t = 100;
   float life = 255;
 
   RakisQuant(float x1, float y1) {
