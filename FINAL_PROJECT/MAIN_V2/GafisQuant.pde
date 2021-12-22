@@ -3,7 +3,7 @@ class GafisQuant {
   float x;
   float y;
   float speed;
-  float t = 200;
+  float t = random(200,300);
   float life = 255;
 
   GafisQuant(float x1, float y1) {

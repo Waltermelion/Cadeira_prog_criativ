@@ -3,7 +3,7 @@ class CurisQuant {
   float x;
   float y;
   float speed;
-  float t = 20;
+  float t = random(20,50);
   float life = 255;
   //float hunger = 200;
 
