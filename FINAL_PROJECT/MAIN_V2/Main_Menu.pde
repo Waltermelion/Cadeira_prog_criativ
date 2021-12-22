@@ -56,6 +56,12 @@ class Main_Menu {
     rk.desenha_rakis();
     gf.desenha_gafis();
     el.desenha_relva();
+    text(cr.crs.size(),width-150,100);
+    text("Alive Curis",width-150,150);
+    text(rk.rks.size(),width-300,100);
+    text("Alive Rakis",width-300,150);
+    text(gf.gfs.size(),width-450,100);
+    text("Alive Gafis",width-450,150);
     back.desenha_button();
   }
 
