@@ -6,17 +6,24 @@ class PVector {
   float t = random(20, 50);
   float life = 255;
   float time = 0;
+  float v = 2;
   //float hunger = 200;
 
 
   PVector(float x1, float y1) {
     x = x1;
     y = y1;
-    speed = 10;
+    speed = 50;
   }
 
   void move() {
 
+    /*float numx = noise(v);
+    float numy = noise(v);
+    
+      numx = map(numx, 0, 1, 20, width);
+      numy = map(numy, 0, 1, 20, height);
+      v += 0.002;*/
     if (x < t/2) {
       x = t/2;
     }
@@ -29,10 +36,12 @@ class PVector {
     if (y < t/2) {
       y = t/2;
     }
+    
+    //x = numx;
+    //y = numy;
 
-    y += random(-speed, speed);
-
-    x += random(-speed, speed);
+    
+    
   }
 
   void eat() {
@@ -73,7 +82,7 @@ class PVector {
   void life() {
   if (millis() >= time) {
       time = millis() + 2000;
-      
+      ellipse(width/2,height/2,50,50);
     }
   }
   

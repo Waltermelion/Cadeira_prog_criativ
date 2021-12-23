@@ -9,6 +9,7 @@ class Curis {
     for (int i = crs.size()-1; i >= 0; i--) {
 
       PVector sr = crs.get(i);
+
       sr.move();
       sr.display();
       sr.eat();
