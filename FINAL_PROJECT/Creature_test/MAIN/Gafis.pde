@@ -49,6 +49,6 @@ class Gafis {
     posX += dx;
     posY += dy;
     intX = floor(posX);
-    intY = floor(posY);
+    intY = floor(posY);   
   }  
 }

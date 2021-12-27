@@ -7,6 +7,7 @@ class Curis {
   int intX, intY;
   float dx = random(-1, 1);
   float dy = random(-1, 1);
+  
 
   int bored = 0;
   Map foodMap;
@@ -51,19 +52,7 @@ class Curis {
     intX = floor(posX);
     intY = floor(posY);
   }
+  
 
-  /*void dontLeave() {
-   if (posX < tam/2) {
-   posX = tam/2;
-   }
-   if (posX > width-tam/2) {
-   posX = width-tam/2;
-   }
-   if (posY > height-tam/2) {
-   posY = height-tam/2;
-   }
-   if (posY < tam/2) {
-   posY = tam/2;
-   }
-   }*/
+  
 }
