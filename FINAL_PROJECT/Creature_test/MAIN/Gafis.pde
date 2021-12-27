@@ -4,8 +4,11 @@ class Gafis {
   float fome;
   float t = 2;
   float vel = 10;
+  
+  int bored = 0;  
+  Map foodMap;
 
-  Gafis() {
+  Gafis(Map _foodMap) {
     posX = random(width);
     posY = random(height);
     tam = 50;

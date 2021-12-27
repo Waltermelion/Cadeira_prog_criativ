@@ -1,6 +1,7 @@
 Curis c;
 Gafis g;
 Rakis r;
+Map pherFood;
 ArrayList<Relva> relvas = new ArrayList<Relva>();
 
 void setup() {  
@@ -10,7 +11,7 @@ void setup() {
   textSize(100);
   textAlign(CENTER);
   c = new Curis();
-  g = new Gafis();
+  g = new Gafis(pherFood);
   r = new Rakis();
   relvas.add(new Relva(width/2,height/2));
 }
