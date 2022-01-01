@@ -1,5 +1,4 @@
 Main_Menu mm;
-Map pherFood;
 
 final color COLOR_WHITE = color(255);
 final color COLOR_BACKGROUND = color(0);
@@ -9,7 +8,6 @@ final color COLOR_BACKGROUND = color(0);
 void settings() {
   fullScreen();
   //size(1800, 800);
-  pherFood = new Map(width, height);
 }
 
 void setup() {
