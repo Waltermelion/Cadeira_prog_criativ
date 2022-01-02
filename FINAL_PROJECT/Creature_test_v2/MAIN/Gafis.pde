@@ -35,7 +35,7 @@ class Gafis {
       if (c1.posY < posY) {
         posY -= speed;
       }
-      if (c1.posX >= posX-tam || c1.posY >= posY-tam || c1.posX <= posX+tam || c1.posY <= posY+tam) {
+      if (c1.posX <= posX-tam || c1.posY <= posY-tam || c1.posX >= posX+tam || c1.posY >= posY+tam) {
         choosen = int(random(1, 3));
       }
     }
@@ -53,47 +53,47 @@ class Gafis {
       if (c2.posY < posY) {
         posY -= speed;
       }
-      if (c2.posX >= posX-tam || c2.posY >= posY-tam || c2.posX <= posX+tam || c2.posY <= posY+tam) {
+      if (c2.posX <= posX-tam || c2.posY <= posY-tam || c2.posX >= posX+tam || c2.posY >= posY+tam) {
         choosen = int(random(1, 3));
       }
     }
     /*//c3
-    if (n == 3) {
-      if (c3.posX > posX) {
-        posX += speed;
-      }
-      if (c3.posX < posX) {
-        posX -= speed;
-      }
-      if (c3.posY > posY) {
-        posY += speed;
-      }
-      if (c3.posY < posY) {
-        posY -= speed;
-      }
-      if (c3.posX >= posX-tam || c3.posY >= posY-tam || c3.posX <= posX+tam || c3.posY <= posY+tam) {
-        choosen = int(random(1, 5));
-      }
-    }
-    //c4
-    if (n == 4) {
-      if (c4.posX > posX) {
-        posX += speed;
-      }
-      if (c4.posX < posX) {
-        posX -= speed;
-      }
-      if (c4.posY > posY) {
-        posY += speed;
-      }
-      if (c4.posY < posY) {
-        posY -= speed;
-      }
-      if (c4.posX >= posX-tam || c4.posY >= posY-tam || c4.posX <= posX+tam || c4.posY <= posY+tam) {
-        choosen = int(random(1, 5));
-      }
-    }*/
-    
+     if (n == 3) {
+     if (c3.posX > posX) {
+     posX += speed;
+     }
+     if (c3.posX < posX) {
+     posX -= speed;
+     }
+     if (c3.posY > posY) {
+     posY += speed;
+     }
+     if (c3.posY < posY) {
+     posY -= speed;
+     }
+     if (c3.posX >= posX-tam || c3.posY >= posY-tam || c3.posX <= posX+tam || c3.posY <= posY+tam) {
+     choosen = int(random(1, 5));
+     }
+     }
+     //c4
+     if (n == 4) {
+     if (c4.posX > posX) {
+     posX += speed;
+     }
+     if (c4.posX < posX) {
+     posX -= speed;
+     }
+     if (c4.posY > posY) {
+     posY += speed;
+     }
+     if (c4.posY < posY) {
+     posY -= speed;
+     }
+     if (c4.posX >= posX-tam || c4.posY >= posY-tam || c4.posX <= posX+tam || c4.posY <= posY+tam) {
+     choosen = int(random(1, 5));
+     }
+     }*/
+
     //No Out of bounds
     if (posX < tam/2) {
       posX = tam/2;
