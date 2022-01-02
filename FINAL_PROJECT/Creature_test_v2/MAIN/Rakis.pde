@@ -17,5 +17,20 @@ class Rakis {
     search();
   }
   void search() {
+    posY += random(-speed, speed);
+    posX += random(-speed, speed);
+
+    if (posX < tam/2) {
+      posX = tam/2;
+    }
+    if (posX > width-tam/2) {
+      posX = width-tam/2;
+    }
+    if (posY > height-tam/2) {
+      posY = height-tam/2;
+    }
+    if (posY < tam/2) {
+      posY = tam/2;
+    }
   }
 }

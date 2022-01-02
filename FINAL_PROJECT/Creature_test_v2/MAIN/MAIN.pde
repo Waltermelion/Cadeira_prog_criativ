@@ -1,21 +1,28 @@
-Curis c;
-Gafis g;
+Curis c1, c2, c3, c4;
+Gafis g1, g2;
 Rakis r;
 
 void setup() {
-  colorMode(HSB, 100);
   //fullScreen();
   size(800, 800, P2D);
   textSize(100);
-  textAlign(CENTER);
-  c = new Curis(floor(random(width)), floor(random(width)));
-  g = new Gafis(floor(random(width)), floor(random(width)));
+  textAlign(CENTER);  
+  c1 = new Curis(floor(random(width)), floor(random(width)));
+  c2 = new Curis(floor(random(width)), floor(random(width)));
+  c3 = new Curis(floor(random(width)), floor(random(width)));
+  c4 = new Curis(floor(random(width)), floor(random(width)));
+  g1 = new Gafis(floor(random(width)), floor(random(width)));
+  g2 = new Gafis(floor(random(width)), floor(random(width)));
   r = new Rakis(floor(random(width)), floor(random(width)));
 }
 
 void draw() {
   background(10, 50, 100);  
-  g.mostraG();
+  g1.mostraG();
+  g2.mostraG();
   r.mostraR();
-  c.mostraC();  
+  c1.mostraC();
+  c2.mostraC();
+  c3.mostraC();
+  c4.mostraC();
 }
