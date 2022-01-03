@@ -9,11 +9,7 @@ class Rakis {
     for (int i = rks.size()-1; i >= 0; i--) {
 
       RakisQuant sr = rks.get(i);
-      sr.move();
       sr.display();
-      if (sr.finished() && sr.tamanho()) {
-        rks.remove(i);        
-      }
     }
   }
 }

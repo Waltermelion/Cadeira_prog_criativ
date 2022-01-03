@@ -12,47 +12,37 @@ class GafisQuant {
     speed = 5;
     choosen = int(random(1, mm.cr.crs.size()));
   }
-  /*
- //NÃO DELETAR ( No Out Of Bounds )
-   if (x < t/2) {
-   x = t/2;
-   }
-   if (x > width-t/2) {
-   x = width-t/2;
-   }
-   if (y > height-t/2) {
-   y = height-t/2;
-   }
-   if (y < t/2) {
-   y = t/2;
-   }*/
+
   void move() {
-    //for (int i = 0; i < mm.cr.crs.size(); i++) {
-    //if (choosen == i){
-    if (mm.cr.crs.get(choosen-1).posX >= posX) {
-      posX += speed;
-    }
-    if (mm.cr.crs.get(choosen-1).posX <= posX) {
-      posX -= speed;
-    }
-    if (mm.cr.crs.get(choosen-1).posY >= posY) {
-      posY += speed;
-    }
-    if (mm.cr.crs.get(choosen-1).posY <= posY) {
-      posY -= speed;
-    }
-    if (mm.cr.crs.size()-1 != 0) {
-      if ((mm.cr.crs.get(choosen-1).posX <= posX+tam/2) && (mm.cr.crs.get(choosen-1).posY <= posY+tam/2) && (mm.cr.crs.get(choosen-1).posY >= posY-tam/2) && (mm.cr.crs.get(choosen-1).posX >= posX-tam/2)) {
-        println(choosen + " first  debug");
-        mm.cr.crs.remove(choosen-1);
-        println(choosen + " second  debug");
-        choosen = int(random(1, mm.cr.crs.size()));
-        println(choosen + " third debug");
+    if (choosen > mm.cr.crs.size()) {
+      choosen = int(random(1, mm.cr.crs.size()));
+    } else {
+
+      if (mm.cr.crs.get(choosen-1).posX >= posX) {
+        posX += speed;
       }
-    } else /*if (mm.cr.crs.size()-1 == 0)*/ {
+      if (mm.cr.crs.get(choosen-1).posX <= posX) {
+        posX -= speed;
+      }
+      if (mm.cr.crs.get(choosen-1).posY >= posY) {
+        posY += speed;
+      }
+      if (mm.cr.crs.get(choosen-1).posY <= posY) {
+        posY -= speed;
+      }
+      if (mm.cr.crs.size()-1 != -1) {
+        if ((mm.cr.crs.get(choosen-1).posX <= posX+tam/2) && (mm.cr.crs.get(choosen-1).posY <= posY+tam/2) && (mm.cr.crs.get(choosen-1).posY >= posY-tam/2) && (mm.cr.crs.get(choosen-1).posX >= posX-tam/2)) {
+
+          mm.cr.crs.remove(choosen-1);
+          choosen = int(random(1, mm.cr.crs.size()));
+        }
+      }
+    }
+    if (mm.cr.crs.size() == 0) {
       posY += random(-speed, speed);
       posX += random(-speed, speed);
     }
+
 
     if (posX < tam/2) {
       posX = tam/2;
@@ -67,6 +57,7 @@ class GafisQuant {
       posY = tam/2;
     }
   }
+
 
 
 
