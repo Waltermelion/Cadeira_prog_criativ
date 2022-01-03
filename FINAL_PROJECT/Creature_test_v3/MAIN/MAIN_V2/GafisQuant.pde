@@ -2,6 +2,7 @@ class GafisQuant {
   float posX, posY, tam;
   float vida;
   float speed;
+  int choosen;
 
   GafisQuant(float spawnX, float spawnY) {
     posX = spawnX;
@@ -9,37 +10,47 @@ class GafisQuant {
     tam = 50;
     vida = 20;
     speed = 5;
+    choosen = int(random(1, mm.cr.crs.size()));
   }
- /*
+  /*
  //NÃO DELETAR ( No Out Of Bounds )
- if (x < t/2) {
-      x = t/2;
-    }
-    if (x > width-t/2) {
-      x = width-t/2;
-    }
-    if (y > height-t/2) {
-      y = height-t/2;
-    }
-    if (y < t/2) {
-      y = t/2;
-    }*/
-  void move() {   
-    for(int i = 0; i < mm.cr.crs.size(); i++){
-if (mm.cr.crs.get(i).posX >= posX){
+   if (x < t/2) {
+   x = t/2;
+   }
+   if (x > width-t/2) {
+   x = width-t/2;
+   }
+   if (y > height-t/2) {
+   y = height-t/2;
+   }
+   if (y < t/2) {
+   y = t/2;
+   }*/
+  void move() {
+    //for (int i = 0; i < mm.cr.crs.size(); i++) {
+    //if (choosen == i){
+    if (mm.cr.crs.get(choosen-1).posX >= posX) {
       posX += speed;
     }
-    if (mm.cr.crs.get(i).posX <= posX){
+    if (mm.cr.crs.get(choosen-1).posX <= posX) {
       posX -= speed;
     }
-    if (mm.cr.crs.get(i).posY >= posY){
+    if (mm.cr.crs.get(choosen-1).posY >= posY) {
       posY += speed;
     }
-    if (mm.cr.crs.get(i).posY <= posY){
+    if (mm.cr.crs.get(choosen-1).posY <= posY) {
       posY -= speed;
     }
-  }
-  if (posX < tam/2) {
+    if ((mm.cr.crs.get(choosen-1).posX <= posX+tam/2) && (mm.cr.crs.get(choosen-1).posY <= posY+tam/2) && (mm.cr.crs.get(choosen-1).posY >= posY-tam/2) && (mm.cr.crs.get(choosen-1).posX >= posX-tam/2)) {
+      if (choosen != 0)
+        mm.cr.crs.remove(choosen-1);
+      choosen = int(random(1, mm.cr.crs.size()));
+    } else if (choosen == 0) {
+      posY += random(-speed, speed);
+      posX += random(-speed, speed);
+    }
+
+    if (posX < tam/2) {
       posX = tam/2;
     }
     if (posX > width-tam/2) {
@@ -53,7 +64,7 @@ if (mm.cr.crs.get(i).posX >= posX){
     }
   }
 
-  
+
 
 
   void display() {
