@@ -3,9 +3,10 @@ class GafisQuant {
   float x;
   float y;
   float speed;
-  float t = random(100,200);
-  float life = 255;
-
+  float t = 50;
+  float time = 0;
+  float tempoTamanho = 1;
+  
   GafisQuant(float x1, float y1) {
     x = x1;
     y = y1;
@@ -27,33 +28,23 @@ class GafisQuant {
       y = t/2;
     }
     
-    y += random(-speed, speed);
 
-    x += random(-speed, speed);
-  }
-
-  boolean finished() {
-    life--;
-    if (life < 0) {
-      return true;
-    } else {
-      return false;
-    }
   }
   
-  boolean tamanho() {
-    t--;
-    if (t < 0) {
-      return true;
-    } else {
-      return false;
+  void life() {
+    if (second() >= time) {
+      time = second() + 1;
+      t += tempoTamanho;
+    } else if (t == 80) {
+      tempoTamanho = 0;
     }
   }
 
 
   void display() {
-    stroke(255, life);
-    fill(life, 0, 255);
+    strokeWeight(1);
+    stroke(255);
+    fill(50, 0, 255);
     ellipse(x, y, t, t);
   }
 }

@@ -3,10 +3,11 @@ class PVector {
   float x;
   float y;
   float speed;
-  float t = random(20, 50);
+  float t = 5;
   float life = 255;
   float time = 0;
   float v = 2;
+  float tempoTamanho = 1;
   //float hunger = 200;
 
 
@@ -19,11 +20,11 @@ class PVector {
   void move() {
 
     /*float numx = noise(v);
-    float numy = noise(v);
-    
-      numx = map(numx, 0, 1, 20, width);
-      numy = map(numy, 0, 1, 20, height);
-      v += 0.002;*/
+     float numy = noise(v);
+     
+     numx = map(numx, 0, 1, 20, width);
+     numy = map(numy, 0, 1, 20, height);
+     v += 0.002;*/
     if (x < t/2) {
       x = t/2;
     }
@@ -36,31 +37,29 @@ class PVector {
     if (y < t/2) {
       y = t/2;
     }
-    
+
     //x = numx;
     //y = numy;
-    
-    
   }
 
   void eat() {
-    float d = dist(mm.el.x, mm.el.y, x, y );
-    for (int i = mm.el.rl.size()-1; i >= 0; i--) {
-      if (d <= 25) {
-        mm.el.rl.remove(i);
-        /*mm.el.rl.add(new RelvaQuant(random(width), random(height), 20));
-         t = 20;
-         life = 255;*/
-      }
-    }
+    /*float d = dist(mm.el.x, mm.el.y, x, y );
+     for (int i = mm.el.rl.size()-1; i >= 0; i--) {
+     if (d <= 25) {
+     mm.el.rl.remove(i);
+            /*mm.el.rl.add(new RelvaQuant(random(width), random(height), 20));
+     t = 20;
+     life = 255;
+     }
+     }*/
   }
 
   void sex() {
 
 
-    /*boolean hit = Curis(x, y, 20, x, y, 20);               
-    if (hit)
-      mm.cr.crs.add(new PVector(random(width), random(height)));*/
+    /*boolean hit = Curis(x, y, 20, x, y, 20);
+     if (hit)
+     mm.cr.crs.add(new PVector(random(width), random(height)));*/
   }
 
 
@@ -79,12 +78,15 @@ class PVector {
   }
 
   void life() {
-  if (millis() >= time) {
-      time = millis() + 2000;
-      ellipse(width/2,height/2,50,50);
+    if (millis() >= time) {
+      time = millis() + 500;
+      t += tempoTamanho;
+    } else if (t == 25) {
+      tempoTamanho = 0;
     }
   }
-  
+
+
 
 
   /*boolean hungry() {
@@ -116,7 +118,8 @@ class PVector {
 
 
   void display() {
-    stroke(255, life);
+    strokeWeight(1);
+    stroke(255);
     fill(0, 255, life);
     ellipse(x, y, t, t);
     /*println(t);

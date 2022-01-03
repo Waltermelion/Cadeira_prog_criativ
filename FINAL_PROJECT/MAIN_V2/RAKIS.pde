@@ -11,9 +11,7 @@ class Rakis {
       RakisQuant sr = rks.get(i);
       sr.move();
       sr.display();
-      if (sr.finished() && sr.tamanho()) {
-        rks.remove(i);        
-      }
+      sr.life();
     }
   }
 }
