@@ -3,8 +3,9 @@ class RakisQuant {
   float x;
   float y;
   float speed;
-  float t = random(100, 150);
-  float life = 255;
+  float t = 100;
+  float time = 0;
+  float tempoTamanho = 1;
 
   RakisQuant(float x1, float y1) {
     x = x1;
@@ -13,47 +14,34 @@ class RakisQuant {
   }
 
   void move() {
-    
+
     if (x < t/2) {
       x = t/2;
-    }  
+    }
     if (x > width-t/2) {
       x = width-t/2;
-    }  
+    }
     if (y > height-t/2) {
       y = height-t/2;
-    }  
+    }
     if (y < t/2) {
       y = t/2;
     }
-    
-    y += random(-speed, speed);
-
-    x += random(-speed, speed);
   }
 
-  boolean finished() {
-    life--;
-    if (life < 0) {
-      return true;
-    } else {
-      return false;
+  void life() {
+    if (second() >= time) {
+      time = second() + 2;
+      t += tempoTamanho;
+    } else if (t == 130) {
+      tempoTamanho = 0;
     }
   }
-  
-  boolean tamanho() {
-    t--;
-    if (t <= 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
 
   void display() {
-    stroke(255, life);
-    fill(255, life, 0);
+    strokeWeight(1);
+    stroke(255);
+    fill(255, 50, 0);
     ellipse(x, y, t, t);
   }
 }

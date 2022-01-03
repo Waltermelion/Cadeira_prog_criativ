@@ -11,9 +11,7 @@ class Gafis {
       GafisQuant sr = gfs.get(i);
       sr.move();
       sr.display();
-      if (sr.finished() && sr.tamanho()) {
-        gfs.remove(i);        
-      }
+      sr.life();
     }
   }
 }
