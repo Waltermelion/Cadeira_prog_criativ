@@ -9,7 +9,7 @@ class Gafis {
     tam = 50;
     vida = 20;
     speed = 10;
-    choosen = int(random(1, 3));
+    choosen = int(random(1, 5));
   }
   void choose() {
     search(choosen);
@@ -35,8 +35,8 @@ class Gafis {
       if (c1.posY < posY) {
         posY -= speed;
       }
-      if (c1.posX <= posX-tam || c1.posY <= posY-tam || c1.posX >= posX+tam || c1.posY >= posY+tam) {
-        choosen = int(random(1, 3));
+      if (c1.posX >= posX-tam || c1.posY >= posY-tam || c1.posX <= posX+tam || c1.posY <= posY+tam) {
+        //choosen = int(random(1, 3));
       }
     }
     //c2
@@ -53,11 +53,11 @@ class Gafis {
       if (c2.posY < posY) {
         posY -= speed;
       }
-      if (c2.posX <= posX-tam || c2.posY <= posY-tam || c2.posX >= posX+tam || c2.posY >= posY+tam) {
-        choosen = int(random(1, 3));
+      if (c2.posX >= posX-tam || c2.posY >= posY-tam || c2.posX <= posX+tam || c2.posY <= posY+tam) {
+        //choosen = int(random(1, 3));
       }
     }
-    /*//c3
+    //c3
      if (n == 3) {
      if (c3.posX > posX) {
      posX += speed;
@@ -72,7 +72,7 @@ class Gafis {
      posY -= speed;
      }
      if (c3.posX >= posX-tam || c3.posY >= posY-tam || c3.posX <= posX+tam || c3.posY <= posY+tam) {
-     choosen = int(random(1, 5));
+     //choosen = int(random(1, 5));
      }
      }
      //c4
@@ -90,9 +90,9 @@ class Gafis {
      posY -= speed;
      }
      if (c4.posX >= posX-tam || c4.posY >= posY-tam || c4.posX <= posX+tam || c4.posY <= posY+tam) {
-     choosen = int(random(1, 5));
+     //choosen = int(random(1, 5));
      }
-     }*/
+     }
 
     //No Out of bounds
     if (posX < tam/2) {

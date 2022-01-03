@@ -3,8 +3,8 @@ Gafis g1, g2;
 Rakis r;
 
 void setup() {
-  //fullScreen();
-  size(800, 800, P2D);
+  fullScreen();
+  //size(800, 800, P2D);
   textSize(100);
   textAlign(CENTER);  
   c1 = new Curis(floor(random(width)), floor(random(width)));
