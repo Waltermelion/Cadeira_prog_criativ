@@ -2,8 +2,6 @@ Main_Menu mm;
 
 final color COLOR_WHITE = color(255);
 final color COLOR_BACKGROUND = color(0);
-float time = 0;
-
 
 void settings() {
   fullScreen();
