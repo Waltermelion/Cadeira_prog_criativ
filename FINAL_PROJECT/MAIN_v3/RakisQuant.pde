@@ -132,6 +132,10 @@ class RakisQuant {
     stroke(255, 255);
     fill(255, 255, 0);
     ellipse(x, y, t, t);
+    strokeWeight(1);
+    stroke(255);
+    fill(0, 255, 0);
+    rect(x - 30, y - t/2 - 10, 60, 2);
     move();
   }
 }

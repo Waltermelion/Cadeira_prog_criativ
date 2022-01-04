@@ -49,5 +49,9 @@ class PVector {
     stroke(255, 255);
     fill(0, 255, 255);
     ellipse(x, y, t, t);
+    strokeWeight(1);
+    stroke(255);
+    fill(0, 255, 0);
+    rect(x - 10, y - t/2 - 10, 20, 2);
   }
 }
