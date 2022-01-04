@@ -1,42 +1,46 @@
 class GafisQuant {
   float x;
   float y;
-  float speed;
+  float speed = 5;
   float t = 5;
   float time = 0;
   float tempotanho = 1;
   int choosen;
+  float xtime = random(100.0);
+  float ytime = random(100.0);
+  float increment = 0.005;
 
-  GafisQuant(float x1, float y1) {
-    x = x1;
-    y = y1;
-    speed = 5;
+  GafisQuant(float x, float y) {
+    this.x = x;
+    this.y = y;
     choosen = int(random(1, mm.cr.crs.size()));
   }
 
   void move() {
     if (t != 70) {
-      y += random(-speed, speed);
-      x += random(-speed, speed);
+      x = noise(xtime) * width;
+      y = noise(ytime) * height;
+      xtime += increment;
+      ytime += increment;
     }
     if (t == 70) {
-    if (choosen > mm.cr.crs.size()) {
-      choosen = int(random(1, mm.cr.crs.size()));
-    } else {
+      if (choosen > mm.cr.crs.size()) {
+        choosen = int(random(1, mm.cr.crs.size()));
+      } else {
 
-      if (mm.cr.crs.get(choosen-1).x >= x) {
-        x += speed;
-      }
-      if (mm.cr.crs.get(choosen-1).x <= x) {
-        x -= speed;
-      }
-      if (mm.cr.crs.get(choosen-1).y >= y) {
-        y += speed;
-      }
-      if (mm.cr.crs.get(choosen-1).y <= y) {
-        y -= speed;
-      }
-      
+        if (mm.cr.crs.get(choosen-1).x >= x) {
+          x += speed;
+        }
+        if (mm.cr.crs.get(choosen-1).x <= x) {
+          x -= speed;
+        }
+        if (mm.cr.crs.get(choosen-1).y >= y) {
+          y += speed;
+        }
+        if (mm.cr.crs.get(choosen-1).y <= y) {
+          y -= speed;
+        }
+
         if (mm.cr.crs.size()-1 != -1) {
           if ((mm.cr.crs.get(choosen-1).x <= x+t/2) && (mm.cr.crs.get(choosen-1).y <= y+t/2) && (mm.cr.crs.get(choosen-1).y >= y-t/2) && (mm.cr.crs.get(choosen-1).x >= x-t/2)) {
 
@@ -47,8 +51,8 @@ class GafisQuant {
       }
 
       if (mm.cr.crs.size() == 0) {
-        y += random(-speed, speed);
         x += random(-speed, speed);
+        y += random(-speed, speed);
       }
     }
 
@@ -73,7 +77,7 @@ class GafisQuant {
       t += tempotanho;
     } else if (t == 70) {
       tempotanho = 0;
-    }
+    }    
   }
 
 

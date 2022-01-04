@@ -6,10 +6,13 @@ class RakisQuant {
   float time = 0;
   float tempotanho = 1;
   int choosenSer, choosenTipo;//qual ser do array escolhes; Qual tipo de ser escolhes(Curis ou Gafis)
+  float xtime = random(100.0);
+  float ytime = random(100.0);
+  float increment = 0.002;
 
-  RakisQuant(float x1, float y1) {
-    x = x1;
-    y = y1;
+  RakisQuant(float x, float y) {
+    this.x = x;
+    this.y = y;
     speed = 3;
     choosenTipo = int(random(1, 20));
     choosenSer = int(random(1, mm.cr.crs.size()));
@@ -17,8 +20,10 @@ class RakisQuant {
 
   void move() {
     if (t != 130) {
-      y += random(-speed, speed);
-      x += random(-speed, speed);
+      x = noise(xtime) * width;
+      y = noise(ytime) * height;
+      xtime += increment;
+      ytime += increment;
     }
     if (t == 130) {
       if (choosenTipo <= 10) {
@@ -53,8 +58,10 @@ class RakisQuant {
 
 
     if (t != 130) {
-      y += random(-speed, speed);
-      x += random(-speed, speed);
+      x = noise(xtime) * width;
+      y = noise(ytime) * height;
+      xtime += increment;
+      ytime += increment;
     }
     if (mm.cr.crs.size() == 0) {
       choosenTipo = 15;
@@ -91,8 +98,8 @@ class RakisQuant {
 
 
       if (mm.gf.gfs.size() == 0 && mm.cr.crs.size() == 0) {
-        y += random(-speed, speed);
         x += random(-speed, speed);
+        y += random(-speed, speed);
       }
     }
 

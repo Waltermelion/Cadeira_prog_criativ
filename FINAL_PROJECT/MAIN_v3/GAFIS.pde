@@ -2,15 +2,23 @@ class Gafis {
 
   ArrayList<GafisQuant> gfs;
 
+  float time = 0;
+
   Gafis(int n) {
     gfs = new ArrayList<GafisQuant>();
   }
   void desenha_gafis() {
     for (int i = gfs.size()-1; i >= 0; i--) {
 
-      GafisQuant sr = gfs.get(i);      
-      sr.display();   
+      GafisQuant sr = gfs.get(i);
+      sr.display();
       sr.life();
+      if (second() >= time) {
+        time = second() + 1;
+      }
+      if (second() == 10) {
+        mm.gf.gfs.remove(i);
+      }
     }
   }
 }

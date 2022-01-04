@@ -1,23 +1,25 @@
 class PVector {
+
   float x;
   float y;
-  float speed;
   float t = 5;
   float time = 0;
-  float v = 2;
   float tempotanho = 1;
+  float xtime = random(100.0);
+  float ytime = random(100.0);
+  float increment = 0.01;
 
   PVector(float x1, float y1) {
     x = x1;
     y = y1;
-    t = 20;
-    speed = 10;
   }
 
   void move() {
-    y += random(-speed, speed);
-    x += random(-speed, speed);
-    
+    x = noise(xtime) * width;
+    y = noise(ytime) * height;
+    xtime += increment;
+    ytime += increment;
+
     if (x < t/2) {
       x = t/2;
     }
@@ -31,7 +33,9 @@ class PVector {
       y = t/2;
     }
   }
-  
+  void sex() {
+  }
+
   void life() {
     if (millis() >= time) {
       time = millis() + 500;
@@ -40,11 +44,10 @@ class PVector {
       tempotanho = 0;
     }
   }
-  
+
   void display() {
     stroke(255, 255);
     fill(0, 255, 255);
     ellipse(x, y, t, t);
-    move();
   }
 }

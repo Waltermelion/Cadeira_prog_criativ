@@ -11,6 +11,8 @@ class Curis {
       PVector sr = crs.get(i);      
       sr.display();  
       sr.life();
+      sr.move();
+      sr.sex();
     }
   }
 }
