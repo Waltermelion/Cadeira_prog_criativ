@@ -15,6 +15,11 @@ class GafisQuant {
   }
 
   void move() {
+    if (t != 70) {
+      y += random(-speed, speed);
+      x += random(-speed, speed);
+    }
+    if (t == 70) {
     if (choosen > mm.cr.crs.size()) {
       choosen = int(random(1, mm.cr.crs.size()));
     } else {
@@ -31,17 +36,20 @@ class GafisQuant {
       if (mm.cr.crs.get(choosen-1).y <= y) {
         y -= speed;
       }
-      if (mm.cr.crs.size()-1 != -1) {
-        if ((mm.cr.crs.get(choosen-1).x <= x+t/2) && (mm.cr.crs.get(choosen-1).y <= y+t/2) && (mm.cr.crs.get(choosen-1).y >= y-t/2) && (mm.cr.crs.get(choosen-1).x >= x-t/2)) {
+      
+        if (mm.cr.crs.size()-1 != -1) {
+          if ((mm.cr.crs.get(choosen-1).x <= x+t/2) && (mm.cr.crs.get(choosen-1).y <= y+t/2) && (mm.cr.crs.get(choosen-1).y >= y-t/2) && (mm.cr.crs.get(choosen-1).x >= x-t/2)) {
 
-          mm.cr.crs.remove(choosen-1);
-          choosen = int(random(1, mm.cr.crs.size()));
+            mm.cr.crs.remove(choosen-1);
+            choosen = int(random(1, mm.cr.crs.size()));
+          }
         }
       }
-    }
-    if (mm.cr.crs.size() == 0) {
-      y += random(-speed, speed);
-      x += random(-speed, speed);
+
+      if (mm.cr.crs.size() == 0) {
+        y += random(-speed, speed);
+        x += random(-speed, speed);
+      }
     }
 
 
@@ -59,7 +67,7 @@ class GafisQuant {
     }
   }
 
-void life() {
+  void life() {
     if (millis() >= time) {
       time = millis() + 100;
       t += tempotanho;

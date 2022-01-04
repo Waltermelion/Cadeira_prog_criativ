@@ -1,5 +1,5 @@
 class RakisQuant {
-    float x;
+  float x;
   float y;
   float speed;
   float t = 5;
@@ -16,66 +16,84 @@ class RakisQuant {
   }
 
   void move() {
-    if (choosenTipo <= 10) {
-      if (choosenSer > mm.cr.crs.size()) {
-        choosenSer = int(random(1, mm.cr.crs.size()));
-      } else {
-
-        if (mm.cr.crs.get(choosenSer-1).x >= x) {
-          x += speed;
-        }
-        if (mm.cr.crs.get(choosenSer-1).x <= x) {
-          x -= speed;
-        }
-        if (mm.cr.crs.get(choosenSer-1).y >= y) {
-          y += speed;
-        }
-        if (mm.cr.crs.get(choosenSer-1).y <= y) {
-          y -= speed;
-        }
-        if (mm.cr.crs.size()-1 != -1) {
-          if ((mm.cr.crs.get(choosenSer-1).x <= x+t/2) && (mm.cr.crs.get(choosenSer-1).y <= y+t/2) && (mm.cr.crs.get(choosenSer-1).y >= y-t/2) && (mm.cr.crs.get(choosenSer-1).x >= x-t/2)) {
-
-            mm.cr.crs.remove(choosenSer-1);
-            choosenSer = int(random(1, mm.cr.crs.size()));
-            choosenTipo = int(random(0, 1));
-          }
-        }
-      }
-    }
-    if (mm.cr.crs.size() == 0){
-      choosenTipo = 15;
-    }
-    if (choosenTipo >= 11) {  ////////////ESCOLHEU O GAFIS
-      if (choosenSer > mm.gf.gfs.size()) {
-        choosenSer = int(random(1, mm.gf.gfs.size()));
-      } else {
-
-        if (mm.gf.gfs.get(choosenSer-1).x >= x) {
-          x += speed;
-        }
-        if (mm.gf.gfs.get(choosenSer-1).x <= x) {
-          x -= speed;
-        }
-        if (mm.gf.gfs.get(choosenSer-1).y >= y) {
-          y += speed;
-        }
-        if (mm.gf.gfs.get(choosenSer-1).y <= y) {
-          y -= speed;
-        }
-        if (mm.gf.gfs.size()-1 != -1) {
-          if ((mm.gf.gfs.get(choosenSer-1).x <= x+t/2) && (mm.gf.gfs.get(choosenSer-1).y <= y+t/2) && (mm.gf.gfs.get(choosenSer-1).y >= y-t/2) && (mm.gf.gfs.get(choosenSer-1).x >= x-t/2)) {
-
-            mm.gf.gfs.remove(choosenSer-1);
-            choosenSer = int(random(1, mm.gf.gfs.size()));
-            choosenTipo = int(random(0, 1));
-          }
-        }
-      }
-    }
-    if (mm.gf.gfs.size() == 0 && mm.cr.crs.size() == 0) {
+    if (t != 130) {
       y += random(-speed, speed);
       x += random(-speed, speed);
+    }
+    if (t == 130) {
+      if (choosenTipo <= 10) {
+        if (choosenSer > mm.cr.crs.size()) {
+          choosenSer = int(random(1, mm.cr.crs.size()));
+        } else {
+
+          if (mm.cr.crs.get(choosenSer-1).x >= x) {
+            x += speed;
+          }
+          if (mm.cr.crs.get(choosenSer-1).x <= x) {
+            x -= speed;
+          }
+          if (mm.cr.crs.get(choosenSer-1).y >= y) {
+            y += speed;
+          }
+          if (mm.cr.crs.get(choosenSer-1).y <= y) {
+            y -= speed;
+          }
+
+          if (mm.cr.crs.size()-1 != -1) {
+            if ((mm.cr.crs.get(choosenSer-1).x <= x+t/2) && (mm.cr.crs.get(choosenSer-1).y <= y+t/2) && (mm.cr.crs.get(choosenSer-1).y >= y-t/2) && (mm.cr.crs.get(choosenSer-1).x >= x-t/2)) {
+
+              mm.cr.crs.remove(choosenSer-1);
+              choosenSer = int(random(1, mm.cr.crs.size()));
+              choosenTipo = int(random(0, 1));
+            }
+          }
+        }
+      }
+    }
+
+
+    if (t != 130) {
+      y += random(-speed, speed);
+      x += random(-speed, speed);
+    }
+    if (mm.cr.crs.size() == 0) {
+      choosenTipo = 15;
+    }
+    if (t == 130) {
+      if (choosenTipo >= 11) {  ////////////ESCOLHEU O GAFIS
+        if (choosenSer > mm.gf.gfs.size()) {
+          choosenSer = int(random(1, mm.gf.gfs.size()));
+        } else {
+
+          if (mm.gf.gfs.get(choosenSer-1).x >= x) {
+            x += speed;
+          }
+          if (mm.gf.gfs.get(choosenSer-1).x <= x) {
+            x -= speed;
+          }
+          if (mm.gf.gfs.get(choosenSer-1).y >= y) {
+            y += speed;
+          }
+          if (mm.gf.gfs.get(choosenSer-1).y <= y) {
+            y -= speed;
+          }
+
+          if (mm.gf.gfs.size()-1 != -1) {
+            if ((mm.gf.gfs.get(choosenSer-1).x <= x+t/2) && (mm.gf.gfs.get(choosenSer-1).y <= y+t/2) && (mm.gf.gfs.get(choosenSer-1).y >= y-t/2) && (mm.gf.gfs.get(choosenSer-1).x >= x-t/2)) {
+
+              mm.gf.gfs.remove(choosenSer-1);
+              choosenSer = int(random(1, mm.gf.gfs.size()));
+              choosenTipo = int(random(0, 1));
+            }
+          }
+        }
+      }
+
+
+      if (mm.gf.gfs.size() == 0 && mm.cr.crs.size() == 0) {
+        y += random(-speed, speed);
+        x += random(-speed, speed);
+      }
     }
 
     if (x < t/2) {
@@ -91,7 +109,8 @@ class RakisQuant {
       y = t/2;
     }
   }
-  
+
+
   void life() {
     if (millis() >= time) {
       time = millis() + 80;
