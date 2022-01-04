@@ -11,7 +11,8 @@ class RelvaQuant {
   }
 
   void display() {
-    stroke(100, 255, 100);
+    noStroke();
+    //stroke(100, 255, 100);
     fill(100, 255, 100);
     rect(x, y, t, t);
   }
