@@ -88,6 +88,7 @@ class GafisQuant {
     ellipse(x, y, t, t);
     strokeWeight(1);
     stroke(255);
+    
     fill(0, 255, 0);
     rect(x - 20, y - t/2 - 10, 40, 2);
     move();

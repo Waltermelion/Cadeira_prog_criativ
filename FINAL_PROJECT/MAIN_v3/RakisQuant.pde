@@ -9,6 +9,7 @@ class RakisQuant {
   float xtime = random(100.0);
   float ytime = random(100.0);
   float increment = 0.002;
+  float time2 = 0;
 
   RakisQuant(float x, float y) {
     this.x = x;
@@ -135,7 +136,15 @@ class RakisQuant {
     strokeWeight(1);
     stroke(255);
     fill(0, 255, 0);
-    rect(x - 30, y - t/2 - 10, 60, 2);
+      rect(x - 30, y - t/2 - 10, 60, 2);
+    if (t == 130 && millis() >= time2) {
+      time2 = millis() + 5000;
+      fill(255, 0, 0);
+      rect((x - 30) *2, y - t/2 - 10, 30, 2);
+    } else {
+      fill(0, 255, 0);
+      rect(x - 30, y - t/2 - 10, 60, 2);
+    }
     move();
   }
 }
