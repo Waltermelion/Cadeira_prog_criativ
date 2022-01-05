@@ -11,6 +11,7 @@ class RakisQuant {
   float ytime = random(100.0);
   float increment = 0.002;
   boolean haveProc = false;
+  int hasEaten = 0;
 
   RakisQuant(float x, float y) {
     this.x = x;
@@ -50,6 +51,12 @@ class RakisQuant {
             if ((mm.cr.crs.get(choosenSer-1).x <= x+t/2) && (mm.cr.crs.get(choosenSer-1).y <= y+t/2) && (mm.cr.crs.get(choosenSer-1).y >= y-t/2) && (mm.cr.crs.get(choosenSer-1).x >= x-t/2)) {
 
               mm.cr.crs.remove(choosenSer-1);
+              
+              hasEaten += 1;
+              if (hasEaten == 6) {
+                hasEaten = 0;
+                mm.rk.rks.add(new RakisQuant(this.x, this.y));
+              }
               choosenSer = int(random(1, mm.cr.crs.size()));
               choosenTipo = int(random(0, 1));
             }
@@ -91,6 +98,12 @@ class RakisQuant {
             if ((mm.gf.gfs.get(choosenSer-1).x <= x+t/2) && (mm.gf.gfs.get(choosenSer-1).y <= y+t/2) && (mm.gf.gfs.get(choosenSer-1).y >= y-t/2) && (mm.gf.gfs.get(choosenSer-1).x >= x-t/2)) {
 
               mm.gf.gfs.remove(choosenSer-1);
+
+              hasEaten += 1;
+              if (hasEaten == 6) {
+                hasEaten = 0;
+                mm.rk.rks.add(new RakisQuant(this.x, this.y));
+              }
               choosenSer = int(random(1, mm.gf.gfs.size()));
               choosenTipo = int(random(0, 1));
             }
@@ -126,22 +139,9 @@ class RakisQuant {
       t += tempotanho;
     } else if (t == 130) {
       tempotanho = 0;
-    }
+    } 
   }
   void sex() {
-    for (int i = mm.rk.rks.size()-1; i >= 0; i--) {
-      float d = dist(mm.rk.rks.get(i).x, mm.rk.rks.get(i).y, x, y);
-
-      if ((d <= 130 && t == 25) && haveProc) {
-        mm.rk.rks.add(new RakisQuant(this.x, this.y));
-        haveProc = false;
-      } else {
-        if (millis() >= time2) {
-          time2 = millis() + 5000;
-          haveProc = true;
-        }
-      }
-    }
   }
 
   void display() {
@@ -151,15 +151,8 @@ class RakisQuant {
     strokeWeight(1);
     stroke(255);
     fill(0, 255, 0);
-      rect(x - 30, y - t/2 - 10, 60, 2);
-    if (t == 130 && millis() >= time2) {
-      time2 = millis() + 5000;
-      fill(255, 0, 0);
-      rect((x - 30) *2, y - t/2 - 10, 30, 2);
-    } else {
-      fill(0, 255, 0);
-      rect(x - 30, y - t/2 - 10, 60, 2);
-    }
+    rect(x - 30, y - t/2 - 10, 60, 2);
+
     move();
   }
 }

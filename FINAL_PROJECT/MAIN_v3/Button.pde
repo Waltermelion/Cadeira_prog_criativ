@@ -22,7 +22,6 @@ class Button {
     stroke(COLOR_WHITE);
     strokeWeight(3);
     fill(COLOR_BUTTONS);
-
     rect(x, y, t - x, ta - y, button_corner);
 
     fill(0);  // black shadow

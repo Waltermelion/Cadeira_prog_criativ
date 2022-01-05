@@ -8,7 +8,7 @@ class Main_Menu {
 
   String current_screen;
 
-  int numeroCr = 10;
+  int numeroCr = 30;
   int numeroRk = 2;
   int numeroGf = 4;
   int numeroRlv = 10;
@@ -53,10 +53,7 @@ class Main_Menu {
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     el.desenha_relva();
-    cr.desenha_curis();
-    rk.desenha_rakis();
-    gf.desenha_gafis();
-    
+
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
 
@@ -84,6 +81,10 @@ class Main_Menu {
     fill(255, 0, 255);
     text(gf.gfs.size(), width-450, 100);
     text("Alive Gafis", width-450, 150);
+
+    cr.desenha_curis();
+    rk.desenha_rakis();
+    gf.desenha_gafis();
   }
 
   void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres

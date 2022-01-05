@@ -2,6 +2,9 @@ class Curis {
 
   ArrayList<PVector> crs;
 
+  float time3 = 0;
+  float t;
+  
   Curis(int n) {
     crs = new ArrayList<PVector>();
   }
@@ -13,6 +16,7 @@ class Curis {
       sr.life();
       sr.move();
       sr.sex();
+      
     }
   }
 }

@@ -2,6 +2,8 @@ class Rakis {
 
   ArrayList<RakisQuant> rks;
 
+  float time3 = 0;  
+  float t;
   Rakis(int n) {
     rks = new ArrayList<RakisQuant>();
   }
@@ -11,6 +13,10 @@ class Rakis {
       RakisQuant sr = rks.get(i);
       sr.display();
       sr.life();
+      if (second() >= time3 &&  t == 130) {
+        time3 = second() + 30;
+        mm.rk.rks.remove(i);
+      }
     }
   }
 }
