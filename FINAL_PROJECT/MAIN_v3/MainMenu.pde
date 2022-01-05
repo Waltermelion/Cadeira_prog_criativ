@@ -8,10 +8,10 @@ class Main_Menu {
 
   String current_screen;
 
-  int numeroCr = 2;
+  int numeroCr = 10;
   int numeroRk = 2;
-  int numeroGf = 2;
-  int numeroRlv = 5;
+  int numeroGf = 4;
+  int numeroRlv = 10;
 
   Main_Menu() {
 
@@ -52,10 +52,11 @@ class Main_Menu {
   void display_game_start() {  //Dentro do START GAME
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
+    el.desenha_relva();
     cr.desenha_curis();
     rk.desenha_rakis();
     gf.desenha_gafis();
-    el.desenha_relva();
+    
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
 

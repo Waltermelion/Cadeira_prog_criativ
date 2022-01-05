@@ -4,11 +4,13 @@ class RakisQuant {
   float speed;
   float t = 5;
   float time = 0;
+  float time2 = 0;
   float tempotanho = 1;
   int choosenSer, choosenTipo;//qual ser do array escolhes; Qual tipo de ser escolhes(Curis ou Gafis)
   float xtime = random(100.0);
   float ytime = random(100.0);
   float increment = 0.002;
+  boolean haveProc = false;
 
   RakisQuant(float x, float y) {
     this.x = x;
@@ -126,7 +128,21 @@ class RakisQuant {
       tempotanho = 0;
     }
   }
+  void sex() {
+    for (int i = mm.rk.rks.size()-1; i >= 0; i--) {
+      float d = dist(mm.rk.rks.get(i).x, mm.rk.rks.get(i).y, x, y);
 
+      if ((d <= 130 && t == 25) && haveProc) {
+        mm.rk.rks.add(new RakisQuant(this.x, this.y));
+        haveProc = false;
+      } else {
+        if (millis() >= time2) {
+          time2 = millis() + 5000;
+          haveProc = true;
+        }
+      }
+    }
+  }
 
   void display() {
     stroke(255, 255);

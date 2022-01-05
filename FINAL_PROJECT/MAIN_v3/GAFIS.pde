@@ -12,13 +12,7 @@ class Gafis {
 
       GafisQuant sr = gfs.get(i);
       sr.display();
-      sr.life();
-      if (second() >= time) {
-        time = second() + 1;
-      }
-      if (second() == 10) {
-        mm.gf.gfs.remove(i);
-      }
+      sr.life();      
     }
   }
 }
