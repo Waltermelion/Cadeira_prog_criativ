@@ -4,10 +4,12 @@ class PVector {
   float y;
   float t = 5;
   float time = 0;
+  float time2 = 0;
   float tempotanho = 1;
   float xtime = random(100.0);
   float ytime = random(100.0);
   float increment = 0.01;
+  boolean haveProc = false;
 
   PVector(float x1, float y1) {
     x = x1;
@@ -34,6 +36,19 @@ class PVector {
     }
   }
   void sex() {
+    for (int i = mm.cr.crs.size()-1; i >= 0; i--) {
+      float d = dist(mm.cr.crs.get(i).x, mm.cr.crs.get(i).y, x, y);
+
+      if ((d <= 30 && t == 25) && haveProc) {
+        mm.cr.crs.add(new PVector(this.x, this.y));
+        haveProc = false;
+      } else {
+        if (millis() >= time2) {
+          time2 = millis() + 5000;
+          haveProc = true;
+        }
+      }
+    }
   }
 
   void life() {
