@@ -38,7 +38,7 @@ class PVector {
   void sex() {
     for (int i = mm.cr.crs.size()-1; i >= 0; i--) {
       float d = dist(mm.cr.crs.get(i).x, mm.cr.crs.get(i).y, x, y);
-
+      
       if ((d <= 30 && t == 25) && haveProc) {
         mm.cr.crs.add(new PVector(this.x, this.y));
         haveProc = false;
