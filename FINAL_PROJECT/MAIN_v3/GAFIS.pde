@@ -1,16 +1,16 @@
-class Gafis {
+class GafisQuant {
 
-  ArrayList<GafisQuant> gfs;
+  ArrayList<Gafis> gfs;
 
   float time = 0;
 
-  Gafis(int n) {
-    gfs = new ArrayList<GafisQuant>();
+  GafisQuant(int n) {
+    gfs = new ArrayList<Gafis>();
   }
   void desenha_gafis() {
     for (int i = gfs.size()-1; i >= 0; i--) {
 
-      GafisQuant sr = gfs.get(i);
+      Gafis sr = gfs.get(i);
       sr.display();
       sr.life();      
     }

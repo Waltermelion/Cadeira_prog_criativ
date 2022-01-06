@@ -1,10 +1,10 @@
-class RelvaQuant {
+class Relva {
 
   float x;
   float y;
   float t;
 
-  RelvaQuant(float x1, float y1, float t1) {
+  Relva(float x1, float y1, float t1) {
     x = x1;
     y = y1;
     t = t1;

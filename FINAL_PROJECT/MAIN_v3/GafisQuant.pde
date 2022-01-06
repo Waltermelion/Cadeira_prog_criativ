@@ -1,4 +1,4 @@
-class GafisQuant {
+class Gafis {
   float x;
   float y;
   float speed = 5;
@@ -14,7 +14,7 @@ class GafisQuant {
   int hasEaten = 0;
 
 
-  GafisQuant(float x, float y) {
+  Gafis(float x, float y) {
     this.x = x;
     this.y = y;
     choosen = int(random(1, mm.cr.crs.size()));
@@ -52,7 +52,7 @@ class GafisQuant {
               hasEaten += 1;
               if (hasEaten == 2) {
                 hasEaten = 0;
-                mm.gf.gfs.add(new GafisQuant(this.x, this.y));
+                mm.gf.gfs.add(new Gafis(this.x, this.y));
               }
               choosen = int(random(1, mm.cr.crs.size()));
             }

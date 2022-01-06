@@ -1,10 +1,10 @@
 class Main_Menu {
 
   Button start_game, options, exit, back, curis1, rakis1, gafis1, quantidade, more, less, quantidadeNum;
-  Curis cr;
-  Rakis rk;
-  Gafis gf;
-  Relva el;
+  CurisQuant cr;
+  RakisQuant rk;
+  GafisQuant gf;
+  RelvaQuant el;
 
   String current_screen;
 
@@ -15,14 +15,14 @@ class Main_Menu {
 
   Main_Menu() {
 
-    cr = new Curis(numeroCr);
-    rk = new Rakis(numeroRk);
-    gf = new Gafis(numeroGf);
-    el = new Relva(numeroRlv);
+    cr = new CurisQuant(numeroCr);
+    rk = new RakisQuant(numeroRk);
+    gf = new GafisQuant(numeroGf);
+    el = new RelvaQuant(numeroRlv);
     current_screen = "MAIN MENU";     // Identificar que este ecrã se chama ou se autotitula-se de MAIN MENU
   }
 
-  void desenha() {
+  void inicializa() {
     background(COLOR_BACKGROUND);
 
     if (current_screen .equals("MAIN MENU")) {            //Condição dependendo do current screen que está
@@ -53,9 +53,6 @@ class Main_Menu {
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     el.desenha_relva();
-    cr.desenha_curis();
-    rk.desenha_rakis();
-    gf.desenha_gafis();
     
 
     if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
@@ -83,7 +80,11 @@ class Main_Menu {
     text("Alive Rakis", width-300, 150);
     fill(255, 0, 255);
     text(gf.gfs.size(), width-450, 100);
-    text("Alive Gafis", width-450, 150);
+    text("Alive Gafis", width-450, 150);    
+    
+    cr.desenha_curis();
+    rk.desenha_rakis();
+    gf.desenha_gafis();
   }
 
   void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres

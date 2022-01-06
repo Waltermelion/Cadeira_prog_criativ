@@ -1,4 +1,4 @@
-class RakisQuant {
+class Rakis {
   float x;
   float y;
   float speed;
@@ -12,7 +12,7 @@ class RakisQuant {
   float increment = 0.002;
   boolean haveProc = false;
 
-  RakisQuant(float x, float y) {
+  Rakis(float x, float y) {
     this.x = x;
     this.y = y;
     speed = 3;
@@ -133,7 +133,7 @@ class RakisQuant {
       float d = dist(mm.rk.rks.get(i).x, mm.rk.rks.get(i).y, x, y);
 
       if ((d <= 130 && t == 25) && haveProc) {
-        mm.rk.rks.add(new RakisQuant(this.x, this.y));
+        mm.rk.rks.add(new Rakis(this.x, this.y));
         haveProc = false;
       } else {
         if (millis() >= time2) {

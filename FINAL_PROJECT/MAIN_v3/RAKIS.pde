@@ -1,14 +1,14 @@
-class Rakis {
+class RakisQuant {
 
-  ArrayList<RakisQuant> rks;
+  ArrayList<Rakis> rks;
 
-  Rakis(int n) {
-    rks = new ArrayList<RakisQuant>();
+  RakisQuant(int n) {
+    rks = new ArrayList<Rakis>();
   }
   void desenha_rakis() {
     for (int i = rks.size()-1; i >= 0; i--) {
 
-      RakisQuant sr = rks.get(i);
+      Rakis sr = rks.get(i);
       sr.display();
       sr.life();
     }

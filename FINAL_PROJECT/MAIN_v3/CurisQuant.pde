@@ -1,4 +1,4 @@
-class PVector {
+class Curis {
 
   float x;
   float y;
@@ -11,7 +11,7 @@ class PVector {
   float increment = 0.01;
   boolean haveProc = false;
 
-  PVector(float x1, float y1) {
+  Curis(float x1, float y1) {
     x = x1;
     y = y1;
   }
@@ -40,7 +40,7 @@ class PVector {
       float d = dist(mm.cr.crs.get(i).x, mm.cr.crs.get(i).y, x, y);
       
       if ((d <= 30 && t == 25) && haveProc) {
-        mm.cr.crs.add(new PVector(this.x, this.y));
+        mm.cr.crs.add(new Curis(this.x, this.y));
         haveProc = false;
       } else {
         if (millis() >= time2) {

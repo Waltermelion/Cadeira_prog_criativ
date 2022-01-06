@@ -1,18 +1,18 @@
-class Relva {
+class RelvaQuant {
 
-  ArrayList<RelvaQuant> rl;
+  ArrayList<Relva> rl;
   float x,y;
 
-  Relva(int n) {
-    rl = new ArrayList<RelvaQuant>();  
+  RelvaQuant(int n) {
+    rl = new ArrayList<Relva>();  
   for(int k = 0; k < n; k++) {
-      rl.add(new RelvaQuant(random(width), random(height), 20));    
+      rl.add(new Relva(random(width), random(height), 20));    
   }
     }
     void desenha_relva() {
       for (int i = rl.size()-1; i >= 0; i--) {
 
-        RelvaQuant rq = rl.get(i);
+        Relva rq = rl.get(i);
         rq.display();
         
       }
