@@ -11,6 +11,10 @@ class RakisQuant {
       Rakis sr = rks.get(i);
       sr.display();
       sr.life();
+      if (second() >= time3 &&  t == 130) {
+        time3 = second() + 30;
+        mm.rk.rks.remove(i);
+      }
     }
   }
 }

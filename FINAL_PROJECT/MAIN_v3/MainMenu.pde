@@ -8,7 +8,7 @@ class Main_Menu {
 
   String current_screen;
 
-  int numeroCr = 10;
+  int numeroCr = 30;
   int numeroRk = 2;
   int numeroGf = 4;
   int numeroRlv = 10;
@@ -80,8 +80,8 @@ class Main_Menu {
     text("Alive Rakis", width-300, 150);
     fill(255, 0, 255);
     text(gf.gfs.size(), width-450, 100);
-    text("Alive Gafis", width-450, 150);    
-    
+    text("Alive Gafis", width-450, 150);
+
     cr.desenha_curis();
     rk.desenha_rakis();
     gf.desenha_gafis();

@@ -13,6 +13,7 @@ class CurisQuant {
       sr.life();
       sr.move();
       sr.sex();
+      
     }
   }
 }

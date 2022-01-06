@@ -27,37 +27,39 @@ class Gafis {
       xtime += increment;
       ytime += increment;
     }
-      if (t == 70) {
-        if (choosen > mm.cr.crs.size()) {
-          choosen = int(random(1, mm.cr.crs.size()));
-        } else {
+    if (t == 70) {
+      if (choosen > mm.cr.crs.size()) {
+        choosen = int(random(1, mm.cr.crs.size()));
+      } else {
 
-          if (mm.cr.crs.get(choosen-1).x >= x) {
-            x += speed;
-          }
-          if (mm.cr.crs.get(choosen-1).x <= x) {
-            x -= speed;
-          }
-          if (mm.cr.crs.get(choosen-1).y >= y) {
-            y += speed;
-          }
-          if (mm.cr.crs.get(choosen-1).y <= y) {
-            y -= speed;
-          }
+        if (mm.cr.crs.get(choosen-1).x >= x) {
+          x += speed;
+        }
+        if (mm.cr.crs.get(choosen-1).x <= x) {
+          x -= speed;
+        }
+        if (mm.cr.crs.get(choosen-1).y >= y) {
+          y += speed;
+        }
+        if (mm.cr.crs.get(choosen-1).y <= y) {
+          y -= speed;
+        }
 
-          if (mm.cr.crs.size()-1 != -1) {
-            if ((mm.cr.crs.get(choosen-1).x <= x+t/2) && (mm.cr.crs.get(choosen-1).y <= y+t/2) && (mm.cr.crs.get(choosen-1).y >= y-t/2) && (mm.cr.crs.get(choosen-1).x >= x-t/2)) {
+        if (mm.cr.crs.size()-1 != -1) {
+          if ((mm.cr.crs.get(choosen-1).x <= x+t/2) && (mm.cr.crs.get(choosen-1).y <= y+t/2) && (mm.cr.crs.get(choosen-1).y >= y-t/2) && (mm.cr.crs.get(choosen-1).x >= x-t/2)) {
 
               mm.cr.crs.remove(choosen-1);
               hasEaten += 1;
-              if (hasEaten == 2) {
+              if (hasEaten == 6) {
                 hasEaten = 0;
                 mm.gf.gfs.add(new Gafis(this.x, this.y));
               }
               choosen = int(random(1, mm.cr.crs.size()));
             }
+            choosen = int(random(1, mm.cr.crs.size()));
           }
         }
+      }
       if (mm.cr.crs.size() == 0) {
         x += random(-speed, speed);
         y += random(-speed, speed);
@@ -88,19 +90,7 @@ class Gafis {
   }
 
   void sex() {
-    /*for (int i = mm.gf.gfs.size()-1; i >= 0; i--) {
-     float d = dist(mm.gf.gfs.get(i).x, mm.gf.gfs.get(i).y, x, y);
-     
-     if ((d <= 70 && t == 25) && haveProc) {
-     mm.gf.gfs.add(new GafisQuant(this.x, this.y));
-     haveProc = false;
-     } else {
-     if (millis() >= time2) {
-     time2 = millis() + 5000;
-     haveProc = true;
-     }
-     }
-     }*/
+    
   }
 
   void display() {
@@ -109,7 +99,6 @@ class Gafis {
     ellipse(x, y, t, t);
     strokeWeight(1);
     stroke(255);
-    
     fill(0, 255, 0);
     rect(x - 20, y - t/2 - 10, 40, 2);
     move();
