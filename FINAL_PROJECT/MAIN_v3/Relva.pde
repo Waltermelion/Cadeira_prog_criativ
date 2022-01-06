@@ -1,20 +1,18 @@
-class RelvaQuant {
+class Relva {
 
-  ArrayList<Relva> rl;
-  float x,y;
+  float x;// x da relva
+  float y;// y da relva
+  float t;// tamanho da relva
 
-  RelvaQuant(int n) {
-    rl = new ArrayList<Relva>();  
-  for(int k = 0; k < n; k++) {
-      rl.add(new Relva(random(width), random(height), 20));    
+  Relva(float x1, float y1, float t1) {
+    x = x1;
+    y = y1;
+    t = t1;
   }
-    }
-    void desenha_relva() {
-      for (int i = rl.size()-1; i >= 0; i--) {
 
-        Relva rq = rl.get(i);
-        rq.display();
-        
-      }
-    }
+  void display() {// desenha a relva
+    noStroke();
+    fill(100, 255, 100);
+    rect(x, y, t, t);
   }
+}

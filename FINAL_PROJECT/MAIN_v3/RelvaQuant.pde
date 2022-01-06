@@ -1,18 +1,19 @@
-class Relva {
+class RelvaQuant {// class da quantidade de Relva
 
-  float x;
-  float y;
-  float t;
+  ArrayList<Relva> rl;// ArrayList do Rakis, permitindo-nos acrescentar e retirar quantos quisermos
 
-  Relva(float x1, float y1, float t1) {
-    x = x1;
-    y = y1;
-    t = t1;
+  RelvaQuant(int n) {
+    rl = new ArrayList<Relva>();  // construtor ArrayList
+  for(int k = 0; k < n; k++) {
+      rl.add(new Relva(random(width), random(height), 20));// adiciona N relvas ao arraylist   
   }
+    }
+    void desenha_relva() {// Desenha a Relva
+      for (int i = rl.size()-1; i >= 0; i--) {
 
-  void display() {
-    noStroke();
-    fill(100, 255, 100);
-    rect(x, y, t, t);
+        Relva rq = rl.get(i);
+        rq.display();
+        
+      }
+    }
   }
-}
