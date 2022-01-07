@@ -3,6 +3,8 @@ Main_Menu mm;
 final color COLOR_WHITE = color(255);
 final color COLOR_BACKGROUND = color(0);
 
+
+
 void settings() {
   fullScreen();
   //size(1800, 800);
@@ -45,7 +47,7 @@ void mousePressed() {      // referencia https://www.youtube.com/watch?v=HzI5H3n
        //se a quantidade de jovens na lista for maior que a quantidade de jovens no numeroCr, numero de jovens na lista = numeroCr      
       for (int k = 0; k < mm.numeroCr; k++) {       
        if(mm.cr.crs.size() != mm.numeroCr){
-         mm.cr.crs.add(new CurisQuant(random(width), random(height)));
+         mm.cr.crs.add(new PVector(random(width), random(height)));
        }
       }
       

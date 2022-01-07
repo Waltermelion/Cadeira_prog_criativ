@@ -4,36 +4,51 @@ class Rakis {
   float fome;
   float t = 2;
   float vel = 10;
+  int intX, intY;
+  float dx = random(-1, 1);
+  float dy = random(-1, 1);
+  
+  int bored = 0;
+  Map foodMap;
+  private float WANDER_CHANCE = .92;
 
-  Rakis() {
-    posX = random(width);
-    posY = random(height);
-    tam = 50;
+  Rakis(int spawnX, int spawnY, Map _foodMap) {
+    posX = float(spawnX);
+    posY = float(spawnY);
+    tam = 100;
     vida = 20;
     fome = 50;
+    intX = spawnX;
+    intY = spawnY;
+    foodMap = _foodMap;
   }
 
-  void spawnR() {      
-    float num = noise(t);
-    num = map(num, 0, 1, 0, width);    
-    posY = num;
-    if (posX < tam/2) {
-      posX = tam/2;
-    }  
-    if (posX > width-tam/2) {
-      posX = width-tam/2;
-    }  
-    if (posY > height-tam/2) {
-      posY = height-tam/2;
-    }  
-    if (posY < tam/2) {
-      posY = tam/2;
-    }
+  void spawnR() {
     fill(0);
     ellipse(posX, posY, tam, tam);
+    
+    if (random(1) > WANDER_CHANCE) dx += random(-1, 1);
+    if (random(1) > WANDER_CHANCE) dy += random(-1, 1);
 
-    t += random(-0.02, 0.02);
+    // Look for food
+    int[] direction = foodMap.getStrongest(intX, intY);
+    dx += direction[0] * random(1.5);
+    dy += direction[1] * random(1.5);
 
-    posX += random(-vel, vel);
+    // Bounding limits, bounce off of edge
+    if (posX<tam) dx = 1;
+    if (posX>width-tam) dx = -1;
+    if (posY<tam) dy = 1;
+    if (posY>height-tam) dy = -1;
+    // Speed limit
+    dx = Math.min(dx, 2);
+    dx = Math.max(dx, -2);
+    dy = Math.min(dy, 2);
+    dy = Math.max(dy, -2);
+    // Move
+    posX += dx;
+    posY += dy;
+    intX = floor(posX);
+    intY = floor(posY);
   }
 }

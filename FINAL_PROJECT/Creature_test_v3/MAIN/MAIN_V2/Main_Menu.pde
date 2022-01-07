@@ -51,17 +51,43 @@ class Main_Menu {
 
   void display_game_start() {  //Dentro do START GAME
 
-    back = new Button("VOLTAR", 50, 40, 200, 90);    
+    back = new Button("VOLTAR", 50, 40, 200, 90);
     cr.desenha_curis();
     rk.desenha_rakis();
     gf.desenha_gafis();
     el.desenha_relva();
-    back.desenha_button();
+    
+    if (mouseX > mm.back.x && mouseX < mm.back.t && mouseY > mm.back.y && mouseY < mm.back.ta) {
+
+      fill(mm.back.COLOR_BUTTONS);
+      rect(mm.back.x, mm.back.y, mm.back.t - mm.back.x, mm.back.ta - mm.back.y, mm.back.button_corner);
+      fill(0);  // black shadow
+      text(mm.back.my_text1, 19 + mm.back.x, 10 +mm.back.y + ( (mm.back.ta - mm.back.y) / 2 ));
+      fill(mm.back.COLOR_WHITE);
+      text(mm.back.my_text1, 21 + mm.back.x, 12 + mm.back.y + ( (mm.back.ta - mm.back.y) / 2 ));
+      back.desenha_button();
+    } else {
+      noFill();
+      rect(mm.back.x, mm.back.y, mm.back.t - mm.back.x, mm.back.ta - mm.back.y, mm.back.button_corner);
+      fill(0, 250);  // black shadow
+      text(mm.back.my_text1, 19 + mm.back.x, 10 +mm.back.y + ( (mm.back.ta - mm.back.y) / 2 ));
+      fill(mm.back.COLOR_WHITE, 250);
+      text(mm.back.my_text1, 21 + mm.back.x, 12 + mm.back.y + ( (mm.back.ta - mm.back.y) / 2 ));
+    }
+    fill(0, 255, 255);
+    text(cr.crs.size(), width-150, 100);
+    text("Alive Curis", width-150, 150);
+    fill(255, 255, 0);
+    text(rk.rks.size(), width-300, 100);
+    text("Alive Rakis", width-300, 150);
+    fill(255, 0, 255);
+    text(gf.gfs.size(), width-450, 100);
+    text("Alive Gafis", width-450, 150);
   }
 
   void display_options_menu() {  //Dentro do OPTION que contem 4 botoes, um de voltar e 3 dos seres
 
-mm.back = new Button("VOLTAR", 50, 40, 200, 90);
+    mm.back = new Button("VOLTAR", 50, 40, 200, 90);
     curis1 = new Button("CURIS", 850, 350, 1000, 400);
     gafis1 = new Button("GAFIS", 850, 550, 1000, 600);
     rakis1 = new Button("RAKIS", 850, 750, 1000, 800);
@@ -69,10 +95,9 @@ mm.back = new Button("VOLTAR", 50, 40, 200, 90);
     gafis1.desenha_button();
     rakis1.desenha_button();
     back.desenha_button();
-    
   }
 
-  void display_options_conf_curis() {    //Dentro do CURIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 
+  void display_options_conf_curis() {    //Dentro do CURIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
@@ -91,7 +116,7 @@ mm.back = new Button("VOLTAR", 50, 40, 200, 90);
     less.desenha_button();
   }
 
-  void display_options_conf_rakis() {    //Dentro do RAKIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 
+  void display_options_conf_rakis() {    //Dentro do RAKIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
@@ -110,7 +135,7 @@ mm.back = new Button("VOLTAR", 50, 40, 200, 90);
     less.desenha_button();
   }
 
-  void display_options_conf_gafis() {      //Dentro do GAFIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero 
+  void display_options_conf_gafis() {      //Dentro do GAFIS e contem 5 botoes, um de voltar um de QUANTIDADE um de + um de - e um do numero
 
     back = new Button("VOLTAR", 50, 40, 200, 90);
     quantidade = new Button("QUANTIDADE", 850, 400, 1070, 450);
