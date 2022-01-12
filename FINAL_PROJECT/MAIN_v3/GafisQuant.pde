@@ -10,7 +10,10 @@ class GafisQuant {// class da quantidade de Gafis
 
       Gafis sr = gfs.get(i);// (get(i)) apanha-me o Gafis atual e mete-lo numa variável chamada sr 
       sr.display();
-      sr.life();      
+      sr.life();
+      if(sr.isOld){// se o ser for velho, morre
+        gfs.remove(i);
+      }
     }
   }
 }
