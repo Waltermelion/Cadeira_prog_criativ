@@ -10,9 +10,12 @@ class CurisQuant {// class da quantidade de Curis
 
       Curis sr = crs.get(i); // (get(i)) apanha-me o curis atual e mete-lo numa variável chamada sr      
       sr.display();  
-      sr.life();
+      sr.life();      
       sr.move();
-      sr.sex();     
+      sr.sex();   
+      if(sr.isOld){// se o ser for velho, morre
+        crs.remove(i);
+      }
     }
   }
 }

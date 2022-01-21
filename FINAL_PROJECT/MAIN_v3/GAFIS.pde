@@ -1,22 +1,36 @@
 class Gafis {// classe do Gafis
   float x;// x do gafis
   float y;// y do gafis
-  float speed = 5;// velocidade do gafis
-  float t = 5;// tamanho inicial do gafis
-  float time = 0;// variavel do tempo, relacionada com o crescimento deles
-  float time2 = 0;// variavel do tempo, relacionada com o nascer deles
-  float tempotanho = 1;// tempo do ser aumentar(aumenta 1 por 1 coiso do tempo que está lá em baixo)
+  float speed;// velocidade do gafis
+  float t;// tamanho inicial do gafis
+  float time;// variavel do tempo, relacionada com o crescimento deles
+  float time2;// variavel do tempo, relacionada com o nascer deles
+  float tempotanho;// tempo do ser aumentar(aumenta 1 por 1 coiso do tempo que está lá em baixo)
   int choosen;// variavel que determina que curis foi escolhido para ser comido
-  float xtime = random(100.0);// variavél x do perlin noise
-  float ytime = random(100.0);// variavél y do perlin noise
-  float increment = 0.005;// incremento do perlin noise
-  boolean haveProc = false;// booleana que controla se reproduz ou não
-  int hasEaten = 0;// int que determina quantos curis comeu
+  float xtime;// variavél x do perlin noise
+  float ytime;// variavél y do perlin noise
+  float increment;// incremento do perlin noise
+  boolean haveProc;// booleana que controla se reproduz ou não
+  int hasEaten;// int que determina quantos curis comeu
+  float life;// variavel que controla a quantidade de vida do ser
+  boolean isOld;// booleana que controla se o ser está velho ou não
 
 
   Gafis(float x, float y) {
     this.x = x;
     this.y = y;
+    speed = 5;
+    t = 5;
+    time = 0;
+    time2 = 0;
+    tempotanho = 1;
+    xtime = random(100.0);
+    ytime = random(100.0);
+    increment = 0.005;
+    haveProc = false;
+    hasEaten = 0;
+    life = random(1000, 1600);
+    isOld = false;
     choosen = int(random(1, mm.cr.crs.size()));// escolhe um curis dentro do size do arraylist
   }
 
@@ -50,6 +64,7 @@ class Gafis {// classe do Gafis
 
             mm.cr.crs.remove(choosen-1);// remove o curis(come-o)
             hasEaten += 1;// adiciona 1 aos curis comidos por este gafis
+            life += 150;
             if (hasEaten == 6) {// se este gafis comer 6 vezes...
               hasEaten = 0;// reset na variavel
               mm.gf.gfs.add(new Gafis(this.x, this.y));// nasce um novo gafis na posição deste gafis
@@ -64,20 +79,20 @@ class Gafis {// classe do Gafis
       x += random(-speed, speed);
       y += random(-speed, speed);
     }
-  
 
-  if (x < t/2) {// Não saias do canvas
-    x = t/2;
-  }
-  if (x > width-t/2) {
-    x = width-t/2;
-  }
-  if (y > height-t/2) {
-    y = height-t/2;
-  }
-  if (y < t/2) {
-    y = t/2;
-  }
+
+    if (x < t/2) {// Não saias do canvas
+      x = t/2;
+    }
+    if (x > width-t/2) {
+      x = width-t/2;
+    }
+    if (y > height-t/2) {
+      y = height-t/2;
+    }
+    if (y < t/2) {
+      y = t/2;
+    }
   }
 
   void life() {// Quando o gafis aparece, aparece pequeno e vai crescendo ao longo do tempo...
@@ -86,6 +101,10 @@ class Gafis {// classe do Gafis
       t += tempotanho;
     } else if (t == 70) {// ...até a idade adulta
       tempotanho = 0;// param de crescer
+      life -= 5;
+    }
+    if (life <= 0) {
+      isOld = true;
     }
   }
 
@@ -96,8 +115,13 @@ class Gafis {// classe do Gafis
     ellipse(x, y, t, t);// gafis
     strokeWeight(1);
     stroke(255);
-    fill(0, 255, 0);// cor da barra de vida
-    rect(x - 20, y - t/2 - 10, 40, 2);// barra de vida
+    if (t==70) {
+      fill(0, 255, 0);// cor da barra de vida
+      rect(x - 20, y - t/2 - 10, 40, 2);// barra de vida
+    } else {
+      fill(255, 0, 0);
+      rect(x - 20, y - t/2 - 10, 40, 2);
+    }
     move();
   }
 }

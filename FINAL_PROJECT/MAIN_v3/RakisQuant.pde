@@ -11,6 +11,9 @@ class RakisQuant {// class da quantidade de Rakis
       Rakis sr = rks.get(i);// (get(i)) apanha-me o Rakis atual e mete-lo numa variável chamada sr 
       sr.display();
       sr.life();
+      if(sr.isOld){// se o ser for velho, morre
+        rks.remove(i);
+      }
     }
   }
 }
